@@ -37,7 +37,7 @@ func parseTime(t *DateTime, val string) error {
 }
 
 // Time returns a standard time struct for the DateTime
-func Time(t *DateTime) time.Time {
+func (t *DateTime) Time() time.Time {
 	return t.val
 }
 

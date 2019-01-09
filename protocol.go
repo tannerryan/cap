@@ -49,11 +49,11 @@ type Alert struct {
 	Addresses   string   `xml:"addresses" json:"addresses"`     // Group listing of intended recipients of the alert message (CONDITIONAL)
 	Code        []string `xml:"code" json:"code"`               // Code denoting special handling of the alert message
 	Note        string   `xml:"note" json:"note"`               // Text describing the purpose or significance of the alert message
-	References  string   `xml:"references" json:"references"`   // Group listing identifying earlier message(s) reference by the alert message
+	References  List     `xml:"references" json:"references"`   // Group listing identifying earlier message(s) reference by the alert message
 	Incidents   string   `xml:"incidents" json:"incidents"`     // Group listing naming the referent incident(s) of the alert message
 
 	Info      []Info      `xml:"info" json:"info"`           // Container for all component parts of the info sub-element of the alert message
-	Signature []Signature `xml:"Signature" json:"signature"` // Standard XML Digital Signature, not originally defined in CAP, used in CAP-CP and NAAD
+	Signature []Signature `xml:"Signature" json:"signature"` // Standard XML Digital Signature, not originally defined in CAP, used in CAP-CP and NAADS
 }
 
 // Info struct describes an anticipated or actual event in terms of its urgency
@@ -118,7 +118,7 @@ type Area struct {
 	XMLName xml.Name `xml:"area" json:"area"` // Area CAP
 
 	AreaDesc string     `xml:"areaDesc" json:"areaDesc"` // Text describing the affected area of the alert message (REQUIRED)
-	Polygon  []string   `xml:"polygon" json:"polygon"`   // Paired values of points defining a polygon that delineates the affected area of the alert message
+	Polygon  List       `xml:"polygon" json:"polygon"`   // Paired values of points defining a polygon that delineates the affected area of the alert message
 	Circle   []string   `xml:"circle" json:"circle"`     // Paired values of a point and radius delineating the affected area of the alert message
 	Geocode  []KeyValue `xml:"geocode" json:"geocode"`   // Geographic code delineating the affected area of the alert message
 	Altitude float32    `xml:"altitude" json:"altitude"` // Specific or minimum altitude of the affected area of the alert message
@@ -133,7 +133,7 @@ type KeyValue struct {
 
 // Signature is a standard XML digital signature. This is not included in the
 // original CAP protocol, but is implemented in CAP-CP and is enforced in
-// Pelmorex's National Alert Aggregation & Dissemination (NAAD) system.
+// Pelmorex's National Alert Aggregation & Dissemination System (NAADS).
 type Signature struct {
 	XMLName xml.Name `xml:"http://www.w3.org/2000/09/xmldsig# Signature" json:"signature"`
 

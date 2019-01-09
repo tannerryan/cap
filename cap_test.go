@@ -20,7 +20,7 @@ func test(t *testing.T, name, expected, actual string) {
 	}
 }
 
-// TestOasisHomelandAlert tests the cap-cp library against OASIS's Homeland
+// TestOasisHomelandAlert tests the cap library against OASIS's Homeland
 // Security Advisory System Alert example as defined in the CAP specification.
 func TestOasisHomelandAlert(t *testing.T) {
 	contents, err := ioutil.ReadFile("testing/Oasis_HomelandAlert.xml")
@@ -69,7 +69,7 @@ func TestOasisHomelandAlert(t *testing.T) {
 	test(t, "Homeland info area description", "U.S. nationwide and interests worldwide", infoAreas.AreaDesc)
 }
 
-// TestOasisThunderstormWarning tests the cap-cp library against OASIS's Severe
+// TestOasisThunderstormWarning tests the cap library against OASIS's Severe
 // Thunderstorm Warning example as defined in the CAP specification.
 func TestOasisThunderstormWarning(t *testing.T) {
 	contents, err := ioutil.ReadFile("testing/Oasis_ThunderstormWarning.xml")
@@ -112,7 +112,7 @@ func TestOasisThunderstormWarning(t *testing.T) {
 	// Info areas
 	infoAreas := info.Area[0] // only one area
 	test(t, "Thunderstorm info area description", "EXTREME NORTH CENTRAL TUOLUMNE COUNTY IN CALIFORNIA, EXTREME NORTHEASTERN CALAVERAS COUNTY IN CALIFORNIA, SOUTHWESTERN ALPINE COUNTY IN CALIFORNIA", infoAreas.AreaDesc)
-	test(t, "Thunderstorm info area polygon", "38.47,-120.14 38.34,-119.95 38.52,-119.74 38.62,-119.89 38.47,-120.14", infoAreas.Polygon[0])
+	test(t, "Thunderstorm info area polygon", "38.47,-120.14 38.34,-119.95 38.52,-119.74 38.62,-119.89 38.47,-120.14", infoAreas.Polygon.String())
 	test(t, "Thunderstorm info area geocode 0 value name", "SAME", infoAreas.Geocode[0].ValueName)
 	test(t, "Thunderstorm info area geocode 0 value", "006109", infoAreas.Geocode[0].Value)
 	test(t, "Thunderstorm info area geocode 1 value name", "SAME", infoAreas.Geocode[1].ValueName)
@@ -121,7 +121,7 @@ func TestOasisThunderstormWarning(t *testing.T) {
 	test(t, "Thunderstorm info area geocode 2 value", "006003", infoAreas.Geocode[2].Value)
 }
 
-// TestOasisEarthquakeReport tests the cap-cp library against OASIS's Earthquake
+// TestOasisEarthquakeReport tests the cap library against OASIS's Earthquake
 // Report example as defined in the CAP specification.
 func TestOasisEarthquakeReport(t *testing.T) {
 	contents, err := ioutil.ReadFile("testing/Oasis_EarthquakeReport.xml")
@@ -140,7 +140,7 @@ func TestOasisEarthquakeReport(t *testing.T) {
 	test(t, "Earthquake status", "Actual", alert.Status.String())
 	test(t, "Earthquake message type", "Update", alert.MsgType.String())
 	test(t, "Earthquake scope", "Public", alert.Scope.String())
-	test(t, "Earthquake references", "trinet@caltech.edu,TRI13970876.1,2003-06-11T20:30:00-07:00", alert.References)
+	test(t, "Earthquake references", "trinet@caltech.edu,TRI13970876.1,2003-06-11T20:30:00-07:00", alert.References.String())
 
 	// Info section
 	info := alert.Info[0] // only one info section
@@ -173,8 +173,8 @@ func TestOasisEarthquakeReport(t *testing.T) {
 	test(t, "Earthquake info area circle", "32.9525,-115.5527 0", infoArea.Circle[0])
 }
 
-// TestOasisAmberAlert tests the cap-cp library against OASIS's Amber Alert
-// example as defined in the CAP specification.
+// TestOasisAmberAlert tests the cap library against OASIS's Amber Alert example
+// as defined in the CAP specification.
 func TestOasisAmberAlert(t *testing.T) {
 	contents, err := ioutil.ReadFile("testing/Oasis_AmberAlert.xml")
 	if err != nil {
@@ -234,4 +234,150 @@ func TestOasisAmberAlert(t *testing.T) {
 	infoSpanishEventCode := infoSpanish.EventCode[0] // only one event code
 	test(t, "Amber info spanish event code value name", "SAME", infoSpanishEventCode.ValueName)
 	test(t, "Amber info spanish event code value", "CAE", infoSpanishEventCode.Value)
+}
+
+// TestPelmorexNAADSWindWarning tests the cap library against a NAADS Wind
+// Warning issues by Environment Canada.
+func TestPelmorexNAADSWindWarning(t *testing.T) {
+	contents, err := ioutil.ReadFile("testing/PelmorexNAADS_WindWarning.xml")
+	if err != nil {
+		panic(err)
+	}
+	alert, err := cap.ParseCAP(contents)
+	if err != nil {
+		panic(err)
+	}
+
+	// Alert section
+	test(t, "Wind identifier", "urn:oid:2.49.0.1.124.3936999913.2019", alert.Identifier)
+	test(t, "Wind sender", "cap-pac@canada.ca", alert.Sender)
+	test(t, "Wind sent", "2019-01-09T02:17:03-00:00", alert.Sent.String())
+	test(t, "Wind status", "Actual", alert.Status.String())
+	test(t, "Wind message type", "Update", alert.MsgType.String())
+	test(t, "Wind source", "Env. Can. - Can. Met. Ctr. – Montréal", alert.Source)
+	test(t, "Wind scope", "Public", alert.Scope.String())
+	test(t, "Wind note", `Notification de service: Des changements au PAC d’ECCC, et qui sont d’importance aux utilisateurs, sont en développement pour un possible lancement au printemps 2019 (ou plus tard). Afin d’avoir accès aux notifications dès qu’elles sont disponibles, vous êtes invités à vous inscrire à la liste de diffusion suivante: http://lists.cmc.ec.gc.ca/mailman/listinfo/dd_info | Service Notice: Changes to ECCC CAP, of importance to users of ECCC CAP, are in development for a possible Spring 2019 release (or later). To have access to notices as they become available you are invited to subscribe to the following mailing list: http://lists.cmc.ec.gc.ca/mailman/listinfo/dd_info`, alert.Note)
+	test(t, "Wind references", `cap-pac@canada.ca,urn:oid:2.49.0.1.124.0642871265.2019,2019-01-08T19:55:40-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.2407362607.2019,2019-01-08T19:56:40-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.2177735585.2019,2019-01-09T02:16:03-00:00`, alert.References.String())
+	test(t, "Wind reference singleton", `cap-pac@canada.ca,urn:oid:2.49.0.1.124.0642871265.2019,2019-01-08T19:55:40-00:00`, alert.References.Values()[0])
+
+	// Info sections
+	infoFrench := alert.Info[0] // french
+	test(t, "Wind info french language", "fr-CA", infoFrench.Language)
+	test(t, "Wind info french category", "Met", infoFrench.Category[0].String())
+	test(t, "Wind info french event", "vent", infoFrench.Event)
+	test(t, "Wind info french response type", "Monitor", infoFrench.ResponseType[0].String())
+	test(t, "Wind info french urgency", "Future", infoFrench.Urgency.String())
+	test(t, "Wind info french severity", "Moderate", infoFrench.Severity.String())
+	test(t, "Wind info french certainty", "Likely", infoFrench.Certainty.String())
+	test(t, "Wind info french audience", "grand public", infoFrench.Audience)
+	test(t, "Wind info french effective", "2019-01-09T02:16:03-00:00", infoFrench.Effective.String())
+	test(t, "Wind info french expires", "2019-01-09T18:16:03-00:00", infoFrench.Expires.String())
+	test(t, "Wind info french sender name", "Environnement Canada", infoFrench.SenderName)
+	test(t, "Wind info french headline", "avertissement de vent en vigueur", infoFrench.Headline)
+	// Tanner: I wish Environment Canada did not send large paragraphs like
+	// this. If anyone from EC is reading this, consdier escaping the
+	// descriptions, or put them all in the element without line breaks.
+	test(t, "Wind info french description", `
+Des vents forts pouvant causer des dommages soufflent ou souffleront.
+
+Une dépression s'approchant depuis l'ouest gagnera la région mercredi. Elle se dirigera ensuite lentement vers le nord-est pour se trouver près des îles d'ici jeudi soir.
+
+Les vents du sud-est devraient augmenter d'intensité mercredi et souffleront en rafales atteignant 100 km/h d'ici mercredi après-midi. Ces très fortes rafales devraient diminuer d'intensité tard mercredi soir ou vers minuit.
+
+De plus, la neige à l'avant de ce système commencera à tomber mercredi matin avant de se changer en pluie d'ici mercredi soir. On prévoit actuellement de 10 à 15 centimètres de neige. Des vents du sud-est avec rafales jusqu'à 100 km/h réduiront la visibilité dans la poudrerie.
+
+De plus, ces vents forts du sud-est produiront des niveaux d'eaux plus élevés que la normale, de hautes vagues et un ressac pilonnant, lors de la marée haute tard mercredi soir.
+
+###
+
+Les bâtiments pourraient être endommagés (bardeaux de toiture, fenêtres brisées).
+
+Un avertissement de vent est émis lorsqu'il y a un risque important que des vents destructeurs soufflent.
+
+Veuillez continuer à surveiller les alertes et les prévisions émises par Environnement Canada. Pour signaler du temps violent, envoyez un courriel à meteoNS@canada.ca ou publiez un gazouillis en utilisant le mot-clic #NSMeteo.
+`, infoFrench.Description)
+	test(t, "Wind info french web", "http://meteo.gc.ca/warnings/index_f.html?prov=sqc", infoFrench.Web)
+
+	// Info french event codes
+	infoFrenchEventCode := infoFrench.EventCode
+	test(t, "Wind info french event code 0 value name", "profile:CAP-CP:Event:0.4", infoFrenchEventCode[0].ValueName)
+	test(t, "Wind info french event code 0 value", "wind", infoFrenchEventCode[0].Value)
+	test(t, "Wind info french event code 1 value name", "SAME", infoFrenchEventCode[1].ValueName)
+	test(t, "Wind info french event code 1 value", "HWW", infoFrenchEventCode[1].Value)
+
+	// Info french parameters
+	infoFrenchParams := infoFrench.Parameter // test first and last elements (middle should work)
+	test(t, "Wind info french parameter 0 value name", "layer:EC-MSC-SMC:1.0:Alert_Type", infoFrenchParams[0].ValueName)
+	test(t, "Wind info french parameter 0 value", "warning", infoFrenchParams[0].Value)
+	test(t, "Wind info french parameter 10 value name", "layer:SOREM:2.0:WirelessImmediate", infoFrenchParams[10].ValueName)
+	test(t, "Wind info french parameter 10 value", "No", infoFrenchParams[10].Value)
+
+	// Info french area
+	infoFrenchArea := infoFrench.Area[0] // only one area
+	test(t, "Wind info french area description", "Îles-de-la-Madeleine", infoFrenchArea.AreaDesc)
+	test(t, "Wind info french area polygon", "47.1947,-61.7255 47.1824,-62.1106 47.4783,-62.0336 47.8867,-61.5042 47.8207,-61.344 47.5211,-61.322 47.1947,-61.7255", infoFrenchArea.Polygon.String())
+	test(t, "Wind info french area polygon singleton", "47.1947,-61.7255", infoFrenchArea.Polygon.Values()[0])
+	test(t, "Wind info french area geocode 0 value name", "layer:EC-MSC-SMC:1.0:CLC", infoFrenchArea.Geocode[0].ValueName)
+	test(t, "Wind info french area geocode 0 value", "036800", infoFrenchArea.Geocode[0].Value)
+	test(t, "Wind info french area geocode 1 value name", "profile:CAP-CP:Location:0.3", infoFrenchArea.Geocode[1].ValueName)
+	test(t, "Wind info french area geocode 1 value", "2401", infoFrenchArea.Geocode[1].Value)
+
+	// Info sections
+	infoEnglish := alert.Info[1] // english
+	test(t, "Wind info english language", "en-CA", infoEnglish.Language)
+	test(t, "Wind info english category", "Met", infoEnglish.Category[0].String())
+	test(t, "Wind info english event", "wind", infoEnglish.Event)
+	test(t, "Wind info english response type", "Monitor", infoEnglish.ResponseType[0].String())
+	test(t, "Wind info english urgency", "Future", infoEnglish.Urgency.String())
+	test(t, "Wind info english severity", "Moderate", infoEnglish.Severity.String())
+	test(t, "Wind info english certainty", "Likely", infoEnglish.Certainty.String())
+	test(t, "Wind info english audience", "general public", infoEnglish.Audience)
+	test(t, "Wind info english effective", "2019-01-09T02:16:03-00:00", infoEnglish.Effective.String())
+	test(t, "Wind info english expires", "2019-01-09T18:16:03-00:00", infoEnglish.Expires.String())
+	test(t, "Wind info english sender name", "Environment Canada", infoEnglish.SenderName)
+	test(t, "Wind info english headline", "wind warning in effect", infoEnglish.Headline)
+	test(t, "Wind info english description", `
+Strong winds that may cause damage are expected or occurring.
+
+A low pressure system approaching from the west will move into the region on Wednesday. It will then slowly track northeastward to lie near the islands by Thursday evening.
+
+Southeasterly winds are expected to strengthen during Wednesday and reach 100 km/h gusts by Wednesday afternoon. These very strong gusts are expected to diminish late Wednesday evening, or near midnight.
+
+Additionally, snow ahead of this system will begin Wednesday morning before changing to rain by Wednesday evening. Snowfall amounts of 10 to 15 centimetres are currently forecast. Southeasterly winds gusting up to 100 km/h will reduce visibility in blowing snow.
+
+Furthermore, these strong southeasterly winds will generate higher than normal water levels, high waves, and pounding surf, at high tide late Wednesday evening.
+
+###
+
+Damage to buildings, such as to roof shingles and windows, may occur.
+
+Wind warnings are issued when there is a significant risk of damaging winds.
+
+Please continue to monitor alerts and forecasts issued by Environment Canada. To report severe weather, send an email to NSstorm@canada.ca or tweet reports using #NSStorm.
+`, infoEnglish.Description)
+	test(t, "Wind info english web", "http://weather.gc.ca/warnings/index_e.html?prov=sqc", infoEnglish.Web)
+
+	// Info english event codes
+	infoEnglishEventCode := infoEnglish.EventCode
+	test(t, "Wind info english event code 0 value name", "profile:CAP-CP:Event:0.4", infoEnglishEventCode[0].ValueName)
+	test(t, "Wind info english event code 0 value", "wind", infoEnglishEventCode[0].Value)
+	test(t, "Wind info english event code 1 value name", "SAME", infoEnglishEventCode[1].ValueName)
+	test(t, "Wind info english event code 1 value", "HWW", infoEnglishEventCode[1].Value)
+
+	// Info english parameters
+	infoEnglishParams := infoEnglish.Parameter // test first and last elements (middle should work)
+	test(t, "Wind info english parameter 0 value name", "layer:EC-MSC-SMC:1.0:Alert_Type", infoEnglishParams[0].ValueName)
+	test(t, "Wind info english parameter 0 value", "warning", infoEnglishParams[0].Value)
+	test(t, "Wind info english parameter 10 value name", "layer:SOREM:2.0:WirelessImmediate", infoEnglishParams[10].ValueName)
+	test(t, "Wind info english parameter 10 value", "No", infoEnglishParams[10].Value)
+
+	// Info english area
+	infoEnglishArea := infoEnglish.Area[0] // only one area
+	test(t, "Wind info english area description", "Îles-de-la-Madeleine", infoEnglishArea.AreaDesc)
+	test(t, "Wind info english area polygon", "47.1947,-61.7255 47.1824,-62.1106 47.4783,-62.0336 47.8867,-61.5042 47.8207,-61.344 47.5211,-61.322 47.1947,-61.7255", infoEnglishArea.Polygon.String())
+	test(t, "Wind info english area polygon singleton", "47.1947,-61.7255", infoEnglishArea.Polygon.Values()[0])
+	test(t, "wind info english area geocode 0 value name", "layer:EC-MSC-SMC:1.0:CLC", infoEnglishArea.Geocode[0].ValueName)
+	test(t, "Wind info english area geocode 0 value", "036800", infoEnglishArea.Geocode[0].Value)
+	test(t, "Wind info english area geocode 1 value name", "profile:CAP-CP:Location:0.3", infoEnglishArea.Geocode[1].ValueName)
+	test(t, "Wind info english area geocode 1 value", "2401", infoEnglishArea.Geocode[1].Value)
 }
