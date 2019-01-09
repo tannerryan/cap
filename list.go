@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-// List is to represent delimeted string values
+// List is to represent delimited string values
 type List struct {
 	val []string
 }
@@ -18,7 +18,7 @@ type List struct {
 // listDelimeter is for joining/splitting values
 var listDelimeter = " "
 
-// String returns the a joined string representation of the values, delimeted
+// String returns the a joined string representation of the values, delimited
 // with the listDelimeter.
 func (t *List) String() string {
 	return strings.Join(t.val, listDelimeter)
