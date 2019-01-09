@@ -275,7 +275,7 @@ func TestPelmorexNAADSWindWarning(t *testing.T) {
 	test(t, "Wind info french sender name", "Environnement Canada", infoFrench.SenderName)
 	test(t, "Wind info french headline", "avertissement de vent en vigueur", infoFrench.Headline)
 	// Tanner: I wish Environment Canada did not send large paragraphs like
-	// this. If anyone from EC is reading this, consdier escaping the
+	// this. If anyone from EC is reading this, consider escaping the
 	// descriptions, or put them all in the element without line breaks.
 	test(t, "Wind info french description", `
 Des vents forts pouvant causer des dommages soufflent ou souffleront.

@@ -24,7 +24,7 @@ func (t *List) String() string {
 	return strings.Join(t.val, listDelimeter)
 }
 
-// parseString will initilize a List struct given a string of values, separated
+// parseString will initialize a List struct given a string of values, separated
 // by the listDelimeter
 func parseString(t *List, val string) error {
 	vals := strings.Split(val, listDelimeter)
