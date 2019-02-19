@@ -1,11 +1,11 @@
 # cap - Common Alerting Protocol Version 1.2 (CAP)
 [![Build
-Status](https://travis-ci.org/TheTannerRyan/cap.svg?branch=master)](https://travis-ci.org/TheTannerRyan/cap)
+Status](https://img.shields.io/travis/TheTannerRyan/cap.svg?style=flat-square)](https://travis-ci.org/TheTannerRyan/cap)
 [![Go Report
-Card](https://goreportcard.com/badge/github.com/thetannerryan/cap)](https://goreportcard.com/report/github.com/thetannerryan/cap)
-[![GoDoc](https://godoc.org/github.com/TheTannerRyan/cap?status.svg)](https://godoc.org/github.com/TheTannerRyan/cap)
+Card](https://goreportcard.com/badge/github.com/thetannerryan/cap?style=flat-square)](https://goreportcard.com/report/github.com/thetannerryan/cap)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-5673AF.svg?style=flat-square)](https://godoc.org/github.com/TheTannerRyan/cap)
 [![GitHub
-license](https://img.shields.io/github/license/thetannerryan/cap.svg)](https://github.com/TheTannerRyan/cap/blob/master/LICENSE)
+license](https://img.shields.io/github/license/TheTannerRyan/cap.svg?style=flat-square)](https://github.com/TheTannerRyan/cap/blob/master/LICENSE)
 
 Package cap is the Go implementation of OASIS Common Alerting Protocol Version
 1.2 (CAP) + Canadian Profile (CAP-CP).
