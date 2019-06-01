@@ -7,6 +7,6 @@ env:
   - GO111MODULE=on
 
 script:
-  - go test -v cap_test.go
+  - go test -v ./...
 
 install: true
