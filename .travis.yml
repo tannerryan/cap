@@ -1,9 +1,12 @@
 language: go
 
 go:
-  - "1.x"
+  - "1.12.x"
 
-go_import_path: github.com/thetannerryan/cap
+env:
+  - GO111MODULE=on
 
 script:
-  - make
+  - go test -v cap_test.go
+
+install: true
