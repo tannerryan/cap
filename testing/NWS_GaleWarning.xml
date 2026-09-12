@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.840.0.1b8c16aeb259dc142a72b0ec82d16657b71df1b1.002.2</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2026-09-12T08:47:00-07:00</sent>
+    <status>Actual</status>
+    <msgType>Alert</msgType>
+    <source>211803 v2.3.0</source>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Gale Warning</event>
+        <responseType>Avoid</responseType>
+        <urgency>Expected</urgency>
+        <severity>Moderate</severity>
+        <certainty>Likely</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>NWS</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>GLW</value>
+        </eventCode>
+        <effective>2026-09-12T08:47:00-07:00</effective>
+        <onset>2026-09-13T15:00:00-07:00</onset>
+        <expires>2026-09-12T17:00:00-07:00</expires>
+        <senderName>NWS San Francisco CA</senderName>
+        <headline>Gale Warning issued September 12 at 8:47AM PDT until September 13 at 9:00PM PDT by NWS San Francisco CA</headline>
+        <description>* WHAT...For the Small Craft Advisory, northwest winds 15 to 25
+kt with gusts up to 34 kt expected. For the Gale Warning,
+northwest winds 20 to 25 kt with gusts up to 35 kt expected.
+
+* WHERE...Coastal Waters from Pigeon Point to Point Pinos
+California out to 10 NM.
+
+* WHEN...For the Small Craft Advisory, until 3 PM PDT Sunday.
+For the Gale Warning, from 3 PM to 9 PM PDT Sunday.
+
+* IMPACTS...Strong winds will cause hazardous seas which could
+capsize or damage vessels and reduce visibility.
+</description>
+        <instruction>Mariners should alter plans to avoid these hazardous conditions.
+Remain in port, seek safe harbor, alter course, and/or secure the
+vessel for hazardous conditions.</instruction>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>AWIPSidentifier</valueName>
+            <value>MWWMTR</value>
+        </parameter>
+        <parameter>
+            <valueName>WMOidentifier</valueName>
+            <value>WHUS76 KMTR 121547</value>
+        </parameter>
+        <parameter>
+            <valueName>NWSheadline</valueName>
+            <value>SMALL CRAFT ADVISORY NOW IN EFFECT UNTIL 3 PM PDT SUNDAY... ...GALE WARNING IN EFFECT FROM 3 PM TO 9 PM PDT SUNDAY</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>VTEC</valueName>
+            <value>/O.EXB.KMTR.GL.W.0029.260913T2200Z-260914T0400Z/</value>
+        </parameter>
+        <parameter>
+            <valueName>eventEndingTime</valueName>
+            <value>2026-09-13T21:00:00-07:00</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Coastal Waters from Pigeon Point to Point Pinos California out to 10 nm</areaDesc>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>057560</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>PZZ560</value>
+            </geocode>
+        </area>
+    </info>
+</alert>

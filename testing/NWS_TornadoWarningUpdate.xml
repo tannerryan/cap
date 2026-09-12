@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<alert xmlns:ns2="http://gov.fema.ipaws.services/caprequest" xmlns="urn:oasis:names:tc:emergency:cap:1.2" xmlns:ns4="http://gov.fema.ipaws.services/IPAWS_CAPService/" xmlns:ns3="http://gov.fema.ipaws.services/capresponse">
+
+    <identifier>NWS-IDP-DEV-3889297-3321274</identifier>
+
+    <sender>w-nws.webmaster@noaa.gov</sender>
+
+    <sent>2020-01-23T08:24:00-06:00</sent>
+
+    <status>Actual</status>
+
+    <msgType>Update</msgType>
+
+    <scope>Public</scope>
+
+    <code>IPAWSv1.0</code>
+
+    <note></note>
+
+    <references>w-nws.webmaster@noaa.gov,NWS-IDP-DEV-3889295-3321272,2020-01-23T08:23:00-06:00</references>
+
+    <info>
+
+        <language>en-US</language>
+
+        <category>Met</category>
+
+        <event>Tornado Warning</event>
+
+        <responseType>Shelter</responseType>
+
+        <urgency>Immediate</urgency>
+
+        <severity>Extreme</severity>
+
+        <certainty>Observed</certainty>
+
+        <eventCode>
+
+            <valueName>SAME</valueName>
+
+            <value>TOR</value>
+
+        </eventCode>
+
+        <eventCode>
+
+            <valueName>NationalWeatherService</valueName>
+
+            <value>TOW</value>
+
+        </eventCode>
+
+        <effective>2020-01-23T08:24:00-06:00</effective>
+
+        <onset>2020-01-23T14:24:00-06:00</onset>
+
+        <expires>2020-01-23T08:29:00-06:00</expires>
+
+        <senderName>NWS Shreveport LA</senderName>
+
+        <headline>Tornado Warning issued January 23 at 2:24PM CST until May 8 at 8:08AM CDT by NWS Shreveport LA</headline>
+
+        <description>...A TORNADO WARNING REMAINS IN EFFECT UNTIL 445 PM CDT FOR SOUTHERN
+
+CALDWELL AND NORTHEASTERN LA SALLE PARISHES...
+
+At 406 PM CDT, a confirmed large and destructive tornado was located
+
+near Midway, or 24 miles northwest of Larto, moving northeast at 35
+
+mph.
+
+TORNADO EMERGENCY for the cities of Midway and Jena. This is a
+
+PARTICULARLY DANGEROUS SITUATION. TAKE COVER NOW!
+
+HAZARD...Deadly tornado.
+
+SOURCE...Weather spotters confirmed tornado.
+
+IMPACT...You are in a life-threatening situation. Flying debris may
+
+be deadly to those caught without shelter. Mobile homes
+
+will be destroyed. Considerable damage to homes,
+
+businesses, and vehicles is likely and complete destruction
+
+is possible.
+
+The tornado will be near...
+
+Jena and Midway around 415 PM CDT.</description>
+
+        <instruction>To repeat, a large, extremely dangerous, and potentially deadly
+
+tornado is on the ground. To protect your life, TAKE COVER NOW! Move
+
+to an interior room on the lowest floor of a sturdy building. Avoid
+
+windows. If in a mobile home, a vehicle or outdoors, move to the
+
+closest substantial shelter and protect yourself from flying debris.</instruction>
+
+        <web>http://www.weather.gov</web>
+
+        <parameter>
+
+            <valueName>eventMotionDescription</valueName>
+
+            <value>2020-01-23T15:06:00.000-06:00...storm...205DEG...31KT...31.63,-92.18 </value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>hailSize</valueName>
+
+            <value>1.75</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDetection</valueName>
+
+            <value>OBSERVED</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDamageThreat</valueName>
+
+            <value>CATASTROPHIC</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>NWSheadline</valueName>
+
+            <value>TORNADO EMERGENCY FOR THE CITIES OF MIDWAY AND JENA</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>VTEC</valueName>
+
+            <value>/O.CON.KSHV.TO.W.0048.000000T0000Z-170508T1308Z/</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>EAS-ORG</valueName>
+
+            <value>WXR</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>PIL</valueName>
+
+            <value>SHVSVSSHV</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>EAS</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>NWEM</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>eventEndingTime</valueName>
+
+            <value>2017-05-08T08:08:00-05:00</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>WEAHandling</valueName>
+
+            <value>Imminent Threat</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMlongtext</valueName>
+
+            <value>National Weather Service: TORNADO EMERGENCY until 8:08 AM CDT. Tornado spotted in this area. This is a life-threatening situation. Take shelter now in a basement or an interior room on the lowest floor of a sturdy building. If you are outdoors, in a mobile home, or in a vehicle move to the closest substantial shelter and protect yourself from flying debris.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMtext</valueName>
+
+            <value>NWS: TORNADO EMERGENCY til 8:08 AM CDT. Tornado spotted in this area. Take shelter now!</value>
+
+        </parameter>
+
+        <area>
+
+            <areaDesc>La Salle, LA; Caldwell, LA</areaDesc>
+
+            <polygon>31.72,-92.01 31.66,-92.04 31.59,-92.11 31.63,-92.26 31.93,-92.12 31.92,-92.01 31.72,-92.01</polygon>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC021</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022021</value>
+
+            </geocode>
+
+        </area>
+
+    </info>
+
+    <info>
+
+        <language>es-US</language>
+
+        <category>Met</category>
+
+        <event>Tornado Warning</event>
+
+        <responseType>Shelter</responseType>
+
+        <urgency>Immediate</urgency>
+
+        <severity>Extreme</severity>
+
+        <certainty>Observed</certainty>
+
+        <eventCode>
+
+            <valueName>SAME</valueName>
+
+            <value>TOR</value>
+
+        </eventCode>
+
+        <eventCode>
+
+            <valueName>NationalWeatherService</valueName>
+
+            <value>TOW</value>
+
+        </eventCode>
+
+        <effective>2020-01-23T08:24:00-06:00</effective>
+
+        <onset>2020-01-23T14:24:00-06:00</onset>
+
+        <expires>2020-01-23T08:29:00-06:00</expires>
+
+        <senderName>NWS Shreveport LA</senderName>
+
+        <headline>Tornado Warning issued January 23 at 2:24PM CST until May 8 at 8:08AM CDT by NWS Shreveport LA</headline>
+
+        <description>...A TORNADO WARNING REMAINS IN EFFECT UNTIL 445 PM CDT FOR SOUTHERN
+
+CALDWELL AND NORTHEASTERN LA SALLE PARISHES...
+
+At 406 PM CDT, a confirmed large and destructive tornado was located
+
+near Midway, or 24 miles northwest of Larto, moving northeast at 35
+
+mph.
+
+TORNADO EMERGENCY for the cities of Midway and Jena. This is a
+
+PARTICULARLY DANGEROUS SITUATION. TAKE COVER NOW!
+
+HAZARD...Deadly tornado.
+
+SOURCE...Weather spotters confirmed tornado.
+
+IMPACT...You are in a life-threatening situation. Flying debris may
+
+be deadly to those caught without shelter. Mobile homes
+
+will be destroyed. Considerable damage to homes,
+
+businesses, and vehicles is likely and complete destruction
+
+is possible.
+
+The tornado will be near...
+
+Jena and Midway around 415 PM CDT.</description>
+
+        <instruction>To repeat, a large, extremely dangerous, and potentially deadly
+
+tornado is on the ground. To protect your life, TAKE COVER NOW! Move
+
+to an interior room on the lowest floor of a sturdy building. Avoid
+
+windows. If in a mobile home, a vehicle or outdoors, move to the
+
+closest substantial shelter and protect yourself from flying debris.</instruction>
+
+        <web>http://www.weather.gov</web>
+
+        <parameter>
+
+            <valueName>eventMotionDescription</valueName>
+
+            <value>2020-01-23T15:06:00.000-06:00...storm...205DEG...31KT...31.63,-92.18 </value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>hailSize</valueName>
+
+            <value>1.75</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDetection</valueName>
+
+            <value>OBSERVED</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDamageThreat</valueName>
+
+            <value>CATASTROPHIC</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>NWSheadline</valueName>
+
+            <value>TORNADO EMERGENCY FOR THE CITIES OF MIDWAY AND JENA</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>VTEC</valueName>
+
+            <value>/O.CON.KSHV.TO.W.0048.000000T0000Z-170508T1308Z/</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>EAS-ORG</valueName>
+
+            <value>WXR</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>PIL</valueName>
+
+            <value>SHVSVSSHV</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>EAS</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>NWEM</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>eventEndingTime</valueName>
+
+            <value>2017-05-08T08:08:00-05:00</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMlongtext</valueName>
+
+            <value>SNM: EMERGENCIA DE TORNADO hasta las 8:08 AM CDT. Un tornado ha sido detectado en esta area. Su vida esta en peligro. Busque refugio en un sotano o en el interior de un cuarto del nivel mas bajo de un edificio seguro. Si esta al aire libre, en una casa movil, o en un vehiculo, debe ir al edificio seguro mas cercano y protegerse de proyectiles.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMtext</valueName>
+
+            <value>SNM: EMERGENCIA DE TORNADO hasta las 8:08 AM CDT. Tornado fue detectado. Refugiarse ahora.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>WEAHandling</valueName>
+
+            <value>Imminent Threat</value>
+
+        </parameter>
+
+        <area>
+
+            <areaDesc>La Salle, LA; Caldwell, LA</areaDesc>
+
+            <polygon>31.72,-92.01 31.66,-92.04 31.59,-92.11 31.63,-92.26 31.93,-92.12 31.92,-92.01 31.72,-92.01</polygon>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC021</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022021</value>
+
+            </geocode>
+
+        </area>
+
+    </info>
+
+</alert>

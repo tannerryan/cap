@@ -1,6 +1,5 @@
-// Copyright (c) 2019 Tanner Ryan. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
+// Copyright (c) 2019 Tanner Ryan. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 package cap
 
@@ -10,53 +9,47 @@ import (
 	"errors"
 )
 
-// Scope is a code denoting the appropriate handling of the alert message
+// Scope identifies the intended distribution of an alert message.
 type Scope int
 
 const (
-	// ScopePublic :: For general dissemination to unrestricted audiences
-	ScopePublic Scope = 0
-	// ScopeRestricted :: For dissemination only to users with a known
-	// operational requirement (see Restriction, below)
-	ScopeRestricted Scope = 1
-	// ScopePrivate :: For dissemination only to specified addresses (see
-	// Addresses, below)
-	ScopePrivate Scope = 2
+	// ScopePublic allows general distribution.
+	ScopePublic Scope = iota + 1
+	// ScopeRestricted limits distribution using Restriction.
+	ScopeRestricted
+	// ScopePrivate limits distribution to Addresses.
+	ScopePrivate
 )
 
-// Scope mapping
-var (
-	ScopeMapping = map[string]Scope{
-		"Public":     ScopePublic,
-		"Restricted": ScopeRestricted,
-		"Private":    ScopePrivate,
-	}
-)
+// ScopeMapping maps CAP scope values to Scope constants. Callers must not
+// modify it.
+var ScopeMapping = map[string]Scope{
+	"Public":     ScopePublic,
+	"Restricted": ScopeRestricted,
+	"Private":    ScopePrivate,
+}
 
-// stringToCode will perform the mapping of string to a Scope code. An error
-// will be thrown if an unknown value is encountered.
+// stringToScopeCode parses a CAP scope value.
 func stringToScopeCode(t *Scope, val string) error {
 	enum, ok := ScopeMapping[val]
 	if !ok {
-		return errors.New("Error: illegal value " + val + " for Scope code")
+		return errors.New("cap: invalid Scope value " + val)
 	}
 	*t = enum
 	return nil
 }
 
-// String converts the Scope code back to a string.
+// String returns the CAP scope value.
 func (t Scope) String() string {
 	for key, val := range ScopeMapping {
 		if val == t {
 			return key
 		}
 	}
-	// logically never reached
 	return ""
 }
 
-// UnmarshalXML will be used during the XML unmarshaling for conversion to Scope
-// code.
+// UnmarshalXML decodes a CAP scope value.
 func (t *Scope) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) error {
 	var val string
 	if err := decoder.DecodeElement(&val, &elem); err != nil {
@@ -65,13 +58,12 @@ func (t *Scope) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) error 
 	return stringToScopeCode(t, val)
 }
 
-// MarshalXML converts the Scope code back to a string when marshaling XML.
+// MarshalXML encodes a CAP scope value.
 func (t Scope) MarshalXML(encoder *xml.Encoder, elem xml.StartElement) error {
-	return encoder.EncodeElement(t.String(), elem)
+	return marshalEnumXML(encoder, elem, t.String(), "Scope")
 }
 
-// UnmarshalJSON will be used during the JSON unmarshaling for conversion to
-// Scope code.
+// UnmarshalJSON decodes a CAP scope value.
 func (t *Scope) UnmarshalJSON(buff []byte) error {
 	var val string
 	if err := json.Unmarshal(buff, &val); err != nil {
@@ -80,7 +72,7 @@ func (t *Scope) UnmarshalJSON(buff []byte) error {
 	return stringToScopeCode(t, val)
 }
 
-// MarshalJSON converts the Scope code back to a string when marshaling JSON.
+// MarshalJSON encodes a CAP scope value.
 func (t Scope) MarshalJSON() ([]byte, error) {
-	return json.Marshal(t.String())
+	return marshalEnumJSON(t.String(), "Scope")
 }

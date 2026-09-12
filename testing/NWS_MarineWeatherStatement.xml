@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.840.0.2556c4c0873cfb319e51aab8d7f914d2d4e1fd6a.001.1</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2026-09-12T09:42:00-04:00</sent>
+    <status>Actual</status>
+    <msgType>Alert</msgType>
+    <source>211803 v2.3.0</source>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Marine Weather Statement</event>
+        <responseType>Monitor</responseType>
+        <urgency>Expected</urgency>
+        <severity>Minor</severity>
+        <certainty>Observed</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>NWS</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>MWS</value>
+        </eventCode>
+        <effective>2026-09-12T09:42:00-04:00</effective>
+        <onset>2026-09-12T09:42:00-04:00</onset>
+        <expires>2026-09-12T13:00:00-04:00</expires>
+        <senderName>NWS Baltimore MD/Washington DC</senderName>
+        <headline>Marine Weather Statement issued September 12 at 9:42AM EDT by NWS Baltimore MD/Washington DC</headline>
+        <description>* WHAT...Southeast winds around 10 with occasional gusts up to 20
+kt possible.
+
+* WHERE...Chesapeake Bay and adjoining estuaries north of Drum
+Point MD, and Tidal Potomac from Key Bridge to Indian Head MD.
+
+* WHEN...Through midday.
+
+* IMPACTS...Conditions may be hazardous to small craft.
+</description>
+        <instruction>Inexperienced mariners, especially those operating smaller
+vessels, should exercise extra caution if navigating the waters
+during this time.</instruction>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>AWIPSidentifier</valueName>
+            <value>MWSLWX</value>
+        </parameter>
+        <parameter>
+            <valueName>WMOidentifier</valueName>
+            <value>FZUS71 KLWX 121342</value>
+        </parameter>
+        <parameter>
+            <valueName>NWSheadline</valueName>
+            <value>OCCASIONAL SOUTHEASTERLY GUSTS TO NEAR 20 KNOTS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Chesapeake Bay north of Pooles Island MD; Chesapeake Bay from Pooles Island to Sandy Point MD; Chesapeake Bay from Sandy Point to North Beach MD; Chesapeake Bay from North Beach to Drum Point MD; Tidal Potomac from Key Bridge to Indian Head MD; Tidal Potomac from Indian Head to Cobb Island MD; Patapsco River including Baltimore Harbor; Chester River to Queenstown MD; Eastern Bay; Choptank River to Cambridge MD and the Little Choptank River; Patuxent River to Broomes Island MD</areaDesc>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073530</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073531</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073532</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073533</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073535</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073536</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073538</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073539</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073540</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073541</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>073542</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ530</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ531</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ532</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ533</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ535</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ536</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ538</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ539</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ540</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ541</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>ANZ542</value>
+            </geocode>
+        </area>
+    </info>
+</alert>

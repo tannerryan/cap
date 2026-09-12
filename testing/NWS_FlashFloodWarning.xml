@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.840.0.b58facdd7ca789cee07387522b92d4814a08ce30.001.1</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2026-09-12T09:39:00-04:00</sent>
+    <status>Actual</status>
+    <msgType>Alert</msgType>
+    <source>211803 v2.3.0</source>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Flash Flood Warning</event>
+        <responseType>Avoid</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Severe</severity>
+        <certainty>Likely</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>FFW</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>FFW</value>
+        </eventCode>
+        <effective>2026-09-12T09:39:00-04:00</effective>
+        <onset>2026-09-12T09:39:00-04:00</onset>
+        <expires>2026-09-12T15:45:00-04:00</expires>
+        <senderName>NWS Peachtree City GA</senderName>
+        <headline>Flash Flood Warning issued September 12 at 9:39AM EDT until September 12 at 3:45PM EDT by NWS Peachtree City GA</headline>
+        <description>FFWFFC
+
+The National Weather Service in Peachtree City has issued a
+
+* Flash Flood Warning for...
+Southeastern Cobb County in north central Georgia...
+Northwestern DeKalb County in north central Georgia...
+Northeastern Douglas County in north central Georgia...
+Central Fulton County in north central Georgia...
+
+* Until 345 PM EDT Saturday.
+
+* At 939 AM EDT, Doppler radar indicated thunderstorms producing
+heavy rain across the warned area. Between 1 and 3 inches of rain
+have fallen. Additional rainfall amounts of 1 to 2 inches are
+possible in the warned area. Flash flooding is ongoing or expected
+to begin shortly.
+
+HAZARD...Flash flooding caused by thunderstorms.
+
+SOURCE...Radar indicated.
+
+IMPACT...Flash flooding of small creeks and streams, urban areas,
+highways, streets and underpasses as well as other poor
+drainage and low-lying areas.
+
+* Some locations that will experience flash flooding include...
+Atlanta, Marietta, Douglasville, City of South Fulton, Sandy
+Springs, Smyrna, Dunwoody, East Point, Chamblee, Doraville,
+Midtown, North Druid Hills, North Atlanta, Bolton, Bankhead,
+Vinings and Cascade Heights.
+</description>
+        <instruction>Turn around, don't drown when encountering flooded roads. Most flood
+deaths occur in vehicles.</instruction>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>AWIPSidentifier</valueName>
+            <value>FFWFFC</value>
+        </parameter>
+        <parameter>
+            <valueName>WMOidentifier</valueName>
+            <value>WGUS52 KFFC 121339</value>
+        </parameter>
+        <parameter>
+            <valueName>flashFloodDetection</valueName>
+            <value>RADAR INDICATED</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>EAS-ORG</valueName>
+            <value>WXR</value>
+        </parameter>
+        <parameter>
+            <valueName>VTEC</valueName>
+            <value>/O.NEW.KFFC.FF.W.0073.260912T1339Z-260912T1945Z/</value>
+        </parameter>
+        <parameter>
+            <valueName>eventEndingTime</valueName>
+            <value>2026-09-12T15:45:00-04:00</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Cobb, GA; DeKalb, GA; Douglas, GA; Fulton, GA</areaDesc>
+            <polygon>33.7,-84.7 33.94,-84.5 33.96,-84.31 33.89,-84.23 33.6,-84.58 33.7,-84.7</polygon>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>013067</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>013089</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>013097</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>013121</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>GAC067</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>GAC089</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>GAC097</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>GAC121</value>
+            </geocode>
+        </area>
+    </info>
+</alert>

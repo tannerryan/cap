@@ -1,6 +1,5 @@
-// Copyright (c) 2019 Tanner Ryan. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
+// Copyright (c) 2019 Tanner Ryan. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 package cap
 
@@ -10,58 +9,60 @@ import (
 	"strings"
 )
 
-// List is to represent delimited string values
+// List represents whitespace-delimited CAP values.
 type List struct {
-	val []string
+	val []string // Parsed list values.
 }
 
-// listDelimeter is for joining/splitting values
-var listDelimeter = " "
+// listDelimiter separates values when a list is encoded.
+const listDelimiter = " "
 
-// String returns the a joined string representation of the values, delimited
-// with the listDelimeter.
-func (t *List) String() string {
-	return strings.Join(t.val, listDelimeter)
+// NewList returns a list containing a copy of values.
+func NewList(values ...string) List {
+	return List{val: append([]string(nil), values...)}
 }
 
-// parseString will initialize a List struct given a string of values, separated
-// by the listDelimeter
-func parseString(t *List, val string) error {
-	vals := strings.Split(val, listDelimeter)
-	t.val = vals
-	return nil
+// String returns the values joined with spaces.
+func (t List) String() string {
+	return strings.Join(t.val, listDelimiter)
 }
 
-// Values returns a standard string slice .
-func (t *List) Values() []string {
-	return t.val
+// parseString initializes a List from whitespace-delimited values.
+func parseString(t *List, val string) {
+	t.val = strings.Fields(val)
 }
 
-// UnmarshalXML will be used during the XML unmarshaling for conversion to List.
+// Values returns the values in the list.
+func (t List) Values() []string {
+	return append([]string(nil), t.val...)
+}
+
+// UnmarshalXML decodes a whitespace-delimited CAP list.
 func (t *List) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) error {
 	var val string
 	if err := decoder.DecodeElement(&val, &elem); err != nil {
 		return err
 	}
-	return parseString(t, val)
+	parseString(t, val)
+	return nil
 }
 
-// MarshalXML converts the List back to a string when marshaling XML.
+// MarshalXML encodes a whitespace-delimited CAP list.
 func (t List) MarshalXML(encoder *xml.Encoder, elem xml.StartElement) error {
 	return encoder.EncodeElement(t.String(), elem)
 }
 
-// UnmarshalJSON will be used during the JSON unmarshaling for conversion to
-// List.
+// UnmarshalJSON decodes a whitespace-delimited CAP list.
 func (t *List) UnmarshalJSON(buff []byte) error {
 	var val string
 	if err := json.Unmarshal(buff, &val); err != nil {
 		return err
 	}
-	return parseString(t, val)
+	parseString(t, val)
+	return nil
 }
 
-// MarshalJSON converts the List back to a string when marshaling JSON.
+// MarshalJSON encodes a whitespace-delimited CAP list.
 func (t List) MarshalJSON() ([]byte, error) {
 	return json.Marshal(t.String())
 }

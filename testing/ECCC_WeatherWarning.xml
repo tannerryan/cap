@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.124.1291076683.2026</identifier>
+    <sender>cap-pac@canada.ca</sender>
+    <sent>2026-09-12T07:10:13-00:00</sent>
+    <status>Actual</status>
+    <msgType>Update</msgType>
+    <source>Env. Can. - Can. Met. Ctr. – Montréal</source>
+    <scope>Public</scope>
+    <code>profile:CAP-CP:0.4</code>
+    <code>layer:SOREM:1.0</code>
+    <code>layer:EC-MSC-SMC:1.0</code>
+    <code>layer:EC-MSC-SMC:1.1</code>
+    <code>layer:SOREM:2.0</code>
+    <note>Service Notice – July 2026: The Environment and Climate Change Canada (ECCC) CAP Service undergoes changes from time to time as the business of alerting evolves. For Spring 2026, changes are expected to include... 1) ECCC's deployment to introduce free-form polygons to represent the true threat area of a weather hazard, which was originally scheduled for June 2026, is delayed. We will communicate the new date when it is available. Monitor https://dd.weather.gc.ca/doc/genots/ for notifications on the new launch date. Information about free-form polygons representing the true threat area of a weather hazard remains under media embargo until launch, 2) marine alerts will now be issued for smaller zone splits in certain areas of Atlantic and Pacific waters and 3) other minor improvements and corrections. For more information on these changes: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/ | Notification de service – juillet 2026: Le service du PAC d’Environnement et Changement climatique Canada (ECCC) subit périodiquement des changements à mesure que le système d’alerte évolue. Pour le printemps 2026, il y aura des changements incluant... 1) Le déploiement par ECCC visant à introduire des polygones de forme libre pour représenter la zone réelle de menace d’un aléa météorologique, qui était initialement prévu pour juin 2026, est retardé. Nous communiquerons la nouvelle date lorsqu’elle sera disponible. Surveiller https://dd.weather.gc.ca/doc/genots/ pour les notifications concernant la nouvelle date de lancement. Les informations concernant les polygones de forme libre représentant la zone réelle de menace d’un aléa météorologique demeurent sous embargo médiatique jusqu’au lancement, 2) les alertes marines seront désormais émises pour des subdivisions de zones plus petites dans certaines régions des eaux de l’Atlantique et du Pacifique et 3) d’autres améliorations et corrections mineures. Pour plus d’informations sur ces changements: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/</note>
+    <references>cap-pac@canada.ca,urn:oid:2.49.0.1.124.3689142128.2026,2026-09-11T22:23:06-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.3276721795.2026,2026-09-12T00:10:48-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.3824774455.2026,2026-09-12T00:17:54-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.3455791376.2026,2026-09-12T00:33:25-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.2354244120.2026,2026-09-12T02:36:35-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.1744941944.2026,2026-09-12T04:54:58-00:00</references>
+    <info>
+        <language>en-CA</language>
+        <category>Met</category>
+        <event>rainfall</event>
+        <responseType>AllClear</responseType>
+        <urgency>Past</urgency>
+        <severity>Minor</severity>
+        <certainty>Observed</certainty>
+        <audience>general public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>rainfall</value>
+        </eventCode>
+        <effective>2026-09-12T07:10:13-00:00</effective>
+        <expires>2026-09-12T08:10:13-00:00</expires>
+        <senderName>Environment Canada</senderName>
+        <headline>yellow warning - rainfall - ended</headline>
+        <description>
+Significant rainfall is no longer expected.
+
+
+###
+</description>
+        <instruction/>
+        <web>https://weather.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20260912071013058/WW_12_72_CWTO/RFW/2213100372127157286202609110503_WW_12_72_CWTO/actual/en_proper_complete_c-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:23719 M:122045 C:141135</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>ended</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>yellow warning - rainfall</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>Northern Ontario</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>WW_12_72_CWTO</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>ended</value>
+        </parameter>
+        <area>
+            <areaDesc>Beardmore - Jellicoe - Macdiarmid</areaDesc>
+            <polygon>49.9338,-88.5445 49.9482,-87.4321 49.1383,-87.4321 49.1129,-88.5445 49.9338,-88.5445</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048220</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558069</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558075</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Gull Bay - Black Sturgeon Lake</areaDesc>
+            <polygon>49.9338,-88.5445 49.1129,-88.5445 49.1101,-88.6636 49.5235,-90.0178 49.9131,-90.0123 49.9338,-88.5445</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048230</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558065</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Upsala - Raith</areaDesc>
+            <polygon>48.5979,-89.6538 48.9922,-91.2145 48.9924,-91.2142 49.5614,-90.2392 49.5235,-90.0178 49.1101,-88.6636 48.7365,-89.3858 48.5979,-89.6538</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048410</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558095</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558100</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Atikokan - Shebandowan - Quetico Park</areaDesc>
+            <polygon>48.0809,-91.2517 48.0718,-91.2945 48.0684,-91.3319 48.0661,-91.3733 48.0562,-91.3849 48.046,-91.4399 48.0647,-91.4521 48.0665,-91.4868 48.0417,-91.57 48.0519,-91.5803 48.0957,-91.5725 48.105,-91.5583 48.1027,-91.5752 48.0954,-91.6397 48.1119,-91.6558 48.1056,-91.6635 48.1057,-91.6778 48.1123,-91.6891 48.1191,-91.6852 48.1118,-91.7021 48.1153,-91.7157 48.1283,-91.7044 48.1429,-91.6999 48.1434,-91.705 48.1544,-91.7101 48.1692,-91.7069 48.1717,-91.7107 48.1681,-91.7243 48.1779,-91.7258 48.1913,-91.7116 48.1978,-91.7154 48.2026,-91.7379 48.1972,-91.7407 48.1997,-91.7617 48.1993,-91.7776 48.1947,-91.7876 48.2002,-91.7939 48.2096,-91.8215 48.2061,-91.8654 48.2186,-91.8686 48.227,-91.8861 48.2368,-91.8936 48.2334,-91.9368 48.2289,-91.9423 48.2334,-91.9609 48.2451,-91.9596 48.2455,-91.9504 48.2529,-91.9598 48.2522,-91.9694 48.247,-91.9692 48.2431,-91.9771 48.2598,-91.9905 48.2651,-92.0071 48.2799,-92.0082 48.2867,-92.013 48.298,-92.0134 48.3207,-92.0007 48.3255,-92.0323 48.3341,-92.049 48.357,-92.0563 48.3532,-92.0789 48.3545,-92.1451 48.364,-92.1468 48.3563,-92.175 48.3503,-92.1763 48.3431,-92.2194 48.3474,-92.2221 48.3534,-92.2617 48.3424,-92.2847 48.3177,-92.297 48.3035,-92.2911 48.2876,-92.2991 48.2648,-92.2847 48.2577,-92.2723 48.2459,-92.2673 48.229,-92.3515 48.2225,-92.357 48.2173,-92.371 48.2474,-92.3909 48.2535,-92.3949 48.2607,-92.3954 48.3041,-92.4258 48.3046,-92.4341 48.324,-92.4487 48.9922,-91.2145 48.5979,-89.6538 48.1209,-90.5764 48.1017,-90.6344 48.0898,-90.7554 48.1037,-90.7699 48.1192,-90.777 48.1363,-90.8037 48.1524,-90.7814 48.1593,-90.8021 48.1772,-90.8078 48.1718,-90.8328 48.1805,-90.8397 48.2366,-90.8413 48.2409,-90.848 48.2347,-90.863 48.2392,-90.8918 48.2289,-90.9141 48.2181,-90.97 48.1974,-91.004 48.1879,-91.0228 48.1874,-91.0485 48.1796,-91.0666 48.1757,-91.085 48.1553,-91.1296 48.1486,-91.1332 48.0809,-91.2517</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048420</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559001</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559060</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Kakabeka Falls - Whitefish Lake - Arrow Lake</areaDesc>
+            <polygon>48.1209,-90.5764 48.5979,-89.6538 48.7365,-89.3858 48.0095,-89.6337 48.004,-89.637 47.9988,-89.6967 48.0182,-89.768 47.9796,-89.8823 48.0223,-89.9932 48.0847,-90.0326 48.1081,-90.1505 48.0958,-90.276 48.0883,-90.374 48.101,-90.4648 48.094,-90.5005 48.0939,-90.5626 48.1066,-90.5718 48.1174,-90.5578 48.1216,-90.5616 48.1194,-90.5774 48.1209,-90.5764</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048520</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558001</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558011</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558012</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558016</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558019</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Nipigon - Rossport</areaDesc>
+            <polygon>49.1101,-88.6636 49.1129,-88.5445 49.1383,-87.4321 48.4447,-87.4467 48.475,-87.9958 48.6611,-88.1405 49.1101,-88.6636</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048610</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558041</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558044</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558063</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558064</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+    </info>
+    <info>
+        <language>fr-CA</language>
+        <category>Met</category>
+        <event>pluie</event>
+        <responseType>AllClear</responseType>
+        <urgency>Past</urgency>
+        <severity>Minor</severity>
+        <certainty>Observed</certainty>
+        <audience>grand public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>rainfall</value>
+        </eventCode>
+        <effective>2026-09-12T07:10:13-00:00</effective>
+        <expires>2026-09-12T08:10:13-00:00</expires>
+        <senderName>Environnement Canada</senderName>
+        <headline>avertissement jaune - pluie - terminé</headline>
+        <description>
+On ne prévoit plus d'importantes quantités de pluie.
+
+###
+</description>
+        <instruction/>
+        <web>https://meteo.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20260912071013058/WW_12_72_CWTO/RFW/2213100372127157286202609110503_WW_12_72_CWTO/actual/en_proper_complete_c-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:23719 M:122045 C:141135</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>ended</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>avertissement jaune - pluie</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>nord de l'Ontario</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>WW_12_72_CWTO</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>ended</value>
+        </parameter>
+        <area>
+            <areaDesc>Beardmore - Jellicoe - Macdiarmid</areaDesc>
+            <polygon>49.9338,-88.5445 49.9482,-87.4321 49.1383,-87.4321 49.1129,-88.5445 49.9338,-88.5445</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048220</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558069</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558075</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Gull Bay - lac Black Sturgeon</areaDesc>
+            <polygon>49.9338,-88.5445 49.1129,-88.5445 49.1101,-88.6636 49.5235,-90.0178 49.9131,-90.0123 49.9338,-88.5445</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048230</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558065</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Upsala - Raith</areaDesc>
+            <polygon>48.5979,-89.6538 48.9922,-91.2145 48.9924,-91.2142 49.5614,-90.2392 49.5235,-90.0178 49.1101,-88.6636 48.7365,-89.3858 48.5979,-89.6538</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048410</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558095</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558100</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Atikokan - Shebandowan - parc Quetico</areaDesc>
+            <polygon>48.0809,-91.2517 48.0718,-91.2945 48.0684,-91.3319 48.0661,-91.3733 48.0562,-91.3849 48.046,-91.4399 48.0647,-91.4521 48.0665,-91.4868 48.0417,-91.57 48.0519,-91.5803 48.0957,-91.5725 48.105,-91.5583 48.1027,-91.5752 48.0954,-91.6397 48.1119,-91.6558 48.1056,-91.6635 48.1057,-91.6778 48.1123,-91.6891 48.1191,-91.6852 48.1118,-91.7021 48.1153,-91.7157 48.1283,-91.7044 48.1429,-91.6999 48.1434,-91.705 48.1544,-91.7101 48.1692,-91.7069 48.1717,-91.7107 48.1681,-91.7243 48.1779,-91.7258 48.1913,-91.7116 48.1978,-91.7154 48.2026,-91.7379 48.1972,-91.7407 48.1997,-91.7617 48.1993,-91.7776 48.1947,-91.7876 48.2002,-91.7939 48.2096,-91.8215 48.2061,-91.8654 48.2186,-91.8686 48.227,-91.8861 48.2368,-91.8936 48.2334,-91.9368 48.2289,-91.9423 48.2334,-91.9609 48.2451,-91.9596 48.2455,-91.9504 48.2529,-91.9598 48.2522,-91.9694 48.247,-91.9692 48.2431,-91.9771 48.2598,-91.9905 48.2651,-92.0071 48.2799,-92.0082 48.2867,-92.013 48.298,-92.0134 48.3207,-92.0007 48.3255,-92.0323 48.3341,-92.049 48.357,-92.0563 48.3532,-92.0789 48.3545,-92.1451 48.364,-92.1468 48.3563,-92.175 48.3503,-92.1763 48.3431,-92.2194 48.3474,-92.2221 48.3534,-92.2617 48.3424,-92.2847 48.3177,-92.297 48.3035,-92.2911 48.2876,-92.2991 48.2648,-92.2847 48.2577,-92.2723 48.2459,-92.2673 48.229,-92.3515 48.2225,-92.357 48.2173,-92.371 48.2474,-92.3909 48.2535,-92.3949 48.2607,-92.3954 48.3041,-92.4258 48.3046,-92.4341 48.324,-92.4487 48.9922,-91.2145 48.5979,-89.6538 48.1209,-90.5764 48.1017,-90.6344 48.0898,-90.7554 48.1037,-90.7699 48.1192,-90.777 48.1363,-90.8037 48.1524,-90.7814 48.1593,-90.8021 48.1772,-90.8078 48.1718,-90.8328 48.1805,-90.8397 48.2366,-90.8413 48.2409,-90.848 48.2347,-90.863 48.2392,-90.8918 48.2289,-90.9141 48.2181,-90.97 48.1974,-91.004 48.1879,-91.0228 48.1874,-91.0485 48.1796,-91.0666 48.1757,-91.085 48.1553,-91.1296 48.1486,-91.1332 48.0809,-91.2517</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048420</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559001</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559060</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3559090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Kakabeka Falls - lac Whitefish - lac Arrow</areaDesc>
+            <polygon>48.1209,-90.5764 48.5979,-89.6538 48.7365,-89.3858 48.0095,-89.6337 48.004,-89.637 47.9988,-89.6967 48.0182,-89.768 47.9796,-89.8823 48.0223,-89.9932 48.0847,-90.0326 48.1081,-90.1505 48.0958,-90.276 48.0883,-90.374 48.101,-90.4648 48.094,-90.5005 48.0939,-90.5626 48.1066,-90.5718 48.1174,-90.5578 48.1216,-90.5616 48.1194,-90.5774 48.1209,-90.5764</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048520</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558001</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558011</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558012</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558016</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558019</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Nipigon - Rossport</areaDesc>
+            <polygon>49.1101,-88.6636 49.1129,-88.5445 49.1383,-87.4321 48.4447,-87.4467 48.475,-87.9958 48.6611,-88.1405 49.1101,-88.6636</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>048610</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558041</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558044</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558063</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558064</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>3558090</value>
+            </geocode>
+        </area>
+    </info>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Environment Canada">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<DigestValue>6JbG4ikkyw5aRTZ6IW9CKles36YWq7iluqCtL17Qbxo=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>Wp9KPhTp7V8cojMFd2yxkUISQaUtyJcmaeCQn1PHLN4eul8e3fbKdaoCRZQqr28O
+HM9cTcF1LlMa6dYUhzjC16ES4t6hi4s5rrzD+K+Zb/tBgwwnpEMLaCMczqGjhEbV
++xAPmBQYdXb1+D1bTCdXJC+oTLAhJ4Z3FzJnZjbOUPcEoah5rgUqS7+s+FRvwPOp
+9o6tGoGXaEb5V2SivhhXdxgVBRubNGwYebhmJu5Xy1VOqCugqr1ne6YGaTE47P5z
+eSTKtqseear47DsklGdAcBl29y7L1ee2LieNMlEGhMukjC18yb4ee2l9gKb/Yvh+
+4KRMnBUJBJ/OxC54owK5qQ==</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>MIIHDDCCBfSgAwIBAgIQM2dJyev0XEPJoQlSaOQgYDANBgkqhkiG9w0BAQsFADCB
+ujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsT
+H1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAy
+MDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwG
+A1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0y
+NDA0MTkwOTQ3MDZaFw0yNTA1MTkwOTQ3MDRaMGwxCzAJBgNVBAYTAkNBMQ8wDQYD
+VQQIEwZRdWViZWMxETAPBgNVBAcTCEdhdGluZWF1MR8wHQYDVQQKExZTaGFyZWQg
+U2VydmljZXMgQ2FuYWRhMRgwFgYDVQQDDA8qLndlYXRoZXIuZ2MuY2EwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDARd6fBVAjKlOvocp442ydQbSCoxHW
+91i1r5TkucsGLkzm92HQsj4eVNCl6Uti3hd3yYL1QxFTImdyUs2ETlDoU/hVFEey
+IevKo3m3ufuv9YryXGtoRcthMITEPrIy6vOyNbGaxJw1J6/AkOs7oAm3kUlx6PS8
+vOnuoyik1r6Q9qx1XP9Z05cIyyIBhsyjdS124Jj01quCjz5COPMXKU1LlaU8LeSA
+qILe9DyC3XWluZGxZH+tGiw42mpiCD3JGlCsXQujU5y4jg2fq8/ePsM3OUzM/Dxs
+kGMMN7LAG9/H4CINJ+aXZQvlgTfIZp2eWLvHy5dnsbi3VAJOEtgRVzedAgMBAAGj
+ggNZMIIDVTAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSSLKB4osVSIvgfhk+6NayJ
+BDAXuDAfBgNVHSMEGDAWgBSConB03bxTP8971PfNf6dgxgpMvzBoBggrBgEFBQcB
+AQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDMGCCsG
+AQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1Ni5jZXIw
+MwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5lbnRydXN0Lm5ldC9sZXZlbDFr
+LmNybDCBnQYDVR0RBIGVMIGSgg8qLndlYXRoZXIuZ2MuY2GCDXdlYXRoZXIuZ2Mu
+Y2GCC21ldGVvLmdjLmNhgg0qLm1ldGVvLmdjLmNhghUqLmFscGhhLndlYXRoZXIu
+Z2MuY2GCEyouYWxwaGEubWV0ZW8uZ2MuY2GCFCouYmV0YS53ZWF0aGVyLmdjLmNh
+ghIqLmJldGEubWV0ZW8uZ2MuY2EwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQG
+CCsGAQUFBwMBBggrBgEFBQcDAjATBgNVHSAEDDAKMAgGBmeBDAECAjCCAYAGCisG
+AQQB1nkCBAIEggFwBIIBbAFqAHYAouMK5EXvva2bfjjtR2d3U9eCW4SU1yteGyzE
+uVCkR+cAAAGO9cCizQAABAMARzBFAiEA7hlkvyyYsnhbas5WDwoTkdGWf92Ukckw
+rGyUqMPZQjkCID8oQlHWS11haifx+i9tBr0epmrzkh2/bbneb9WNrlUvAHcATnWj
+J1yaEMM4W2zU3z9S6x3w4I4bjWnAsfpksWKaOd8AAAGO9cCi2AAABAMASDBGAiEA
+iE1jLaXrlPxrkIiq7NU0gH/sDiUlHCmMrT79KUy2V+YCIQCb2GrTID6NO3hb8bGs
+ctd8ipYRuu1FnDY8X3MGVDcWnAB3AObSMWNAd4zBEEEG13G5zsHSQPaWhIb7uocy
+Hf0eN45QAAABjvXAovkAAAQDAEgwRgIhALRWB9aVOe3Zi9j6MEVKJl1NKQKIycr3
+8IfKeHxckblpAiEA85xjN3iBFvEVT4yIxO4qKRelbpFGomgSrYnfwTSUwHIwDQYJ
+KoZIhvcNAQELBQADggEBADGEK5tU92TqoTWPh1lfSRTDVCpk5qhqmIuaTeYQMonV
+AgHF5rktrUhXmMzRJEef8XRwLvApT4zOn+TV+NOUpi8q6tDWxx7dE8+moIf6tXq8
+d4OQ+VDO/C6nz/xA8FqvxAbPfqCJ6DqgitSyXhF01XkNMfVcknGAzhc/HemuukI1
+3DTuaATlbaXkHjSp+O0mXCykCIgH/9eMuOoFMzhdQhtJiLf2MMVclJ72/YzgVveA
+XrSTVE5F4BYdp9hX+0BTg5zNgg1wwvVVOwuIOTFqSSJCzGHjl/1i8IyyPLKB3ilt
+B+0V7IdmIxlvPbL//qNkzyUVufkewAoLMqCOUIZA0eY=</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></alert>

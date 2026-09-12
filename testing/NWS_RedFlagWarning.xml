@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.840.0.5cb8914fd35198578cd66e8cfe9df9eee494edb4.001.2</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2026-09-11T12:47:00-06:00</sent>
+    <status>Actual</status>
+    <msgType>Alert</msgType>
+    <source>211803 v2.3.0</source>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Red Flag Warning</event>
+        <responseType>Prepare</responseType>
+        <urgency>Expected</urgency>
+        <severity>Severe</severity>
+        <certainty>Likely</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>NWS</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>FWW</value>
+        </eventCode>
+        <effective>2026-09-11T12:47:00-06:00</effective>
+        <onset>2026-09-12T12:00:00-06:00</onset>
+        <expires>2026-09-12T15:00:00-06:00</expires>
+        <senderName>NWS Boise ID</senderName>
+        <headline>Red Flag Warning issued September 11 at 12:47PM MDT until September 12 at 9:00PM MDT by NWS Boise ID</headline>
+        <description>...HOT AND DRY WITH GUSTY WINDS AHEAD OF A COLD FRONT SATURDAY
+AFTERNOON AND EVENING...
+
+Hot and dry conditions on Saturday will combined with increase
+southerly winds ahead of an approaching cold front. Expect
+sustained winds of 15 to 25 mph with gusts up to 45 mph with
+humidities between 15 and 20 percent. Eastern portions of 423
+along with zone 426 has seen little to no rainfall in the last two
+weeks keeping fuel critically dry.
+
+The National Weather Service in Boise has issued a Red Flag
+Warning for winds and low relative humidities, which is in effect
+from noon to 9 PM MDT Saturday. The Fire Weather Watch is no
+longer in effect.
+
+* AFFECTED AREA...In Idaho, Fire Weather Zones 423 Owyhee
+Mountains and 426 Southern Highlands.
+
+* TIMING...From noon to 9 PM MDT Saturday.
+
+* WINDS...Southwest 15 to 25 mph with gusts up to 45 mph.
+
+* RELATIVE HUMIDITY...15 to 20 percent.
+
+* TEMPERATURES...78 to 88 degrees.
+
+* IMPACTS...Any fire that develops will catch and spread
+quickly. Outdoor burning is not recommended.
+</description>
+        <instruction>A Red Flag Warning means that critical fire weather conditions
+are either occurring now, or will occur shortly.</instruction>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>AWIPSidentifier</valueName>
+            <value>RFWBOI</value>
+        </parameter>
+        <parameter>
+            <valueName>WMOidentifier</valueName>
+            <value>WWUS85 KBOI 111847</value>
+        </parameter>
+        <parameter>
+            <valueName>NWSheadline</valueName>
+            <value>RED FLAG WARNING IN EFFECT FROM NOON TO 9 PM MDT SATURDAY FOR WINDS AND LOW RELATIVE HUMIDITIES FOR OWYHEE MOUNTAINS AND SOUTHERN HIGHLANDS...WHICH ARE FIRE WEATHER ZONES 423 AND 426</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>VTEC</valueName>
+            <value>/O.NEW.KBOI.FW.W.0022.260912T1800Z-260913T0300Z/</value>
+        </parameter>
+        <parameter>
+            <valueName>eventEndingTime</valueName>
+            <value>2026-09-12T21:00:00-06:00</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Owyhee Mountains; Southern Highlands</areaDesc>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>016027</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>016073</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>016083</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>IDZ423</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>IDZ426</value>
+            </geocode>
+        </area>
+    </info>
+</alert>

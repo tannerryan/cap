@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+	<identifier>631D759D-BE6B-8715-5834-64E275678DC2</identifier>
+	<sender>testSender@Pelmorex-test</sender>
+	<sent>2018-04-13T09:53:18-04:00</sent>
+	<status>Actual</status>
+	<msgType>Alert</msgType>
+	<scope>Public</scope>
+	<code>profile:CAP-CP:0.4</code>
+	<code>layer:SOREM:1.0</code>
+	<info>
+		<language>en-CA</language>
+		<category>Met</category>
+		<event>Tornado</event>
+		<urgency>Immediate</urgency>
+		<severity>Moderate</severity>
+		<certainty>Observed</certainty>
+		<eventCode>
+			<valueName>profile:CAP-CP:Event:0.4</valueName>
+			<value>tornado</value>
+		</eventCode>
+		<expires>2018-04-13T11:45:00-04:00</expires>
+		<senderName>Pelmorex-test</senderName>
+		<headline>7- Alert Message with Free drawn circle</headline>
+		<description>This example contains an Alert Message with NAAD System Signature and a free drawn circle</description>
+		<parameter>
+			<valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+			<value>No</value>
+		</parameter>
+		<parameter>
+			<valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+			<value>No</value>
+		</parameter>
+		<parameter>
+			<valueName>NAADS:InternalUse:1</valueName>
+			<value>Circle</value>
+		</parameter>
+		<area>
+			<areaDesc>Toronto, ON</areaDesc>
+			<circle>43.686188,-79.434665 3.87</circle>
+			<geocode>
+				<valueName>profile:CAP-CP:Location:0.3</valueName>
+				<value>3520</value>
+			</geocode>
+		</area>
+	</info>
+	<Signature Id="NAADS Signature" xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+				<DigestValue>QcL/xp9psobX/3UO961uENW83P5P5EzmPHfys54KDpM=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>r/CFNpW9aVOczZJzLhwXlaLhXNkAYYDw6pIm2RbEbzYD2KkEBkIL+q2dZ55NHo13zGsfjxVvlx8ZwvkxrtceF73NKPcHzyzVqJgn15EZgHwCrSvHbmvz/nfCj0K4H57rt0yb2P1zI3B16GQP4q/IpLy4fJQ7rjP4GCoIT637tpgQj2fflzdFVEJXV5NZDS8oIir04CBF+n7aPJHWfY00Y5kfSGLTlEj8xq2L5SJgd/1zjrgzeTTDkeQlaeu0Z8e3/Q0689cfMcpYzxPrT4rM932lNHGdWth1rS74dqU0jQ9o95snyfXj4dBRxcdRsvvKi2B3xwBj9q9MQJ5v6/ccxw==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIE+jCCA+KgAwIBAgIQHzv2SIZlNFqqT+buyzVNbzANBgkqhkiG9w0BAQsFADB+MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVjIENsYXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MB4XDTE1MTExNzAwMDAwMFoXDTE4MTExNjIzNTk1OVowgYkxCzAJBgNVBAYTAkNBMRAwDgYDVQQIDAdPbnRhcmlvMREwDwYDVQQHDAhPYWt2aWxsZTEcMBoGA1UECgwTUGVsbW9yZXggTWVkaWEgSW5jLjEbMBkGA1UECwwSTmV0d29yayBPcGVyYXRpb25zMRowGAYDVQQDDBFkc3MzLnBlbG1vcmV4LmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL494dp5CdJARyUoDAz2NBquwS4KVgLJcywpSzI+sieo6VFX+z+0bOHlxgFM8HOdsN0GJFD71FhCGkpy+tP5NXETIMMcCNyJzwtHvhV6CY+ELDFQSLKUO30A1cHRGUogUB+Cir4HdrVpCtUtpioyGEM9tF+CTTSCSiNFB6P3nn+c4L9iVXLUhOqx4TLmkTmd+cxb6he0SbhLNM5Gxbga3rmHKqfWQqqL/KapCkRVzHztD3IK3z9POkEBT9FdwkAs1evHz5WCD2ELshIdkVSzVsw9GkoOR1QuYlYe/Vl0Q/0tpB1S2sRMT/EbTca0XddlbHCY2cWBmKYjMrvUAV30bWMCAwEAAaOCAWYwggFiMBwGA1UdEQQVMBOCEWRzczMucGVsbW9yZXguY29tMAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgWgMCsGA1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9zcy5zeW1jYi5jb20vc3MuY3JsMGEGA1UdIARaMFgwVgYGZ4EMAQICMEwwIwYIKwYBBQUHAgEWF2h0dHBzOi8vZC5zeW1jYi5jb20vY3BzMCUGCCsGAQUFBwICMBkMF2h0dHBzOi8vZC5zeW1jYi5jb20vcnBhMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAfBgNVHSMEGDAWgBRfYM9hkFXfhEMUimAqsvV69EMY7zBXBggrBgEFBQcBAQRLMEkwHwYIKwYBBQUHMAGGE2h0dHA6Ly9zcy5zeW1jZC5jb20wJgYIKwYBBQUHMAKGGmh0dHA6Ly9zcy5zeW1jYi5jb20vc3MuY3J0MA0GCSqGSIb3DQEBCwUAA4IBAQAUxS5znem6wspFvsU0dUuR3aAJKLoylzwRHJm8wAps+V60ICXrXMI7r61YYxZH7lIDGi5fhngBVNvOfwlHBj3wBmRbmr3PkWi+eqpdwtlfIafQZMfTCteWxlayj4+2722wy/TIrbG7j4dUYJqpaJB5i8jVq/PLDueLc5OhyN/OuPNME3R994AwrnntwXKw+9S4tVxrYCD1rVWt2F1KmIKKmDv5rJ9iUNrl0Z53XW3etN3RjLfhFd34NCRGJgpp4gDkl5QyquK6eo/X1wrE0pddPVyuX1/NKeqHYOccORP5WFrWsBn2qSFdqg2O2wMGi9291g0ZzPRHAmtC4JmQgzbp</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+		<Object xmlns="">
+			<SignatureProperties>
+				<SignatureProperty Id="NAADS-DSS1" Target="https://dss1-staging.naad-adna.pelmorex.com">
+					<xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd"/>
+				</SignatureProperty>
+				<SignatureProperty Id="NAADS-DSS2" Target="https://dss2-staging.naad-adna.pelmorex.com">
+					<xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd"/>
+				</SignatureProperty>
+			</SignatureProperties>
+		</Object>
+	</Signature>
+</alert>

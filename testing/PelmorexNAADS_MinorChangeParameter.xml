@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+	<identifier>473E9B47-D474-B3F1-9765-1AFED0761075</identifier>
+	<sender>testSender@Pelmorex-test</sender>
+	<sent>2018-04-13T09:45:16-04:00</sent>
+	<status>Actual</status>
+	<msgType>Alert</msgType>
+	<scope>Public</scope>
+	<code>profile:CAP-CP:0.4</code>
+	<code>layer:SOREM:1.0</code>
+	<note>Minor Update: en-CA|Minor Update sample.</note>
+	<references>PelmorexTest,78A038D9-701C-659D-47A8-7C54C13884C2,2018-04-13T09:35:16-04:00</references>
+	<info>
+		<language>en-CA</language>
+		<category>Met</category>
+		<event>Tornado</event>
+		<urgency>Immediate</urgency>
+		<severity>Moderate</severity>
+		<certainty>Observed</certainty>
+		<eventCode>
+			<valueName>profile:CAP-CP:Event:0.4</valueName>
+			<value>tornado</value>
+		</eventCode>
+		<expires>2018-04-13T13:15:00-04:00</expires>
+		<senderName>Pelmorex-test</senderName>
+		<headline>9- Sample Alert Message with Minor Update</headline>
+		<description>This example contains an Alert Message with NAAD System Signature and 'Minor update' selected.</description>
+		<parameter>
+			<valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+			<value>No</value>
+		</parameter>
+		<parameter>
+			<valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+			<value>No</value>
+		</parameter>
+		<parameter>
+			<valueName>profile:CAP-CP:0.4:MinorChange</valueName>
+			<value>text</value>
+		</parameter>
+		<area>
+			<areaDesc>Toronto, ON</areaDesc>
+			<polygon>43.7358,-79.6301 43.6648,-79.5885 43.6463,-79.6088 43.6446,-79.6072 43.6430,-79.5984 43.6446,-79.5925 43.6428,-79.5887 43.6372,-79.5853 43.6286,-79.5852 43.6253,-79.5747 43.6279,-79.5639 43.6248,-79.5637 43.6239,-79.5657 43.6145,-79.5684 43.6127,-79.5642 43.6107,-79.5673 43.6092,-79.5672 43.6028,-79.5565 43.5996,-79.5556 43.5984,-79.5536 43.5957,-79.5536 43.5951,-79.5489 43.5904,-79.5494 43.5888,-79.5465 43.5870,-79.5482 43.5852,-79.5446 43.5813,-79.5438 43.5603,-79.5229 43.6236,-79.4637 43.6315,-79.4696 43.6331,-79.4673 43.6353,-79.4580 43.6342,-79.4467 43.6247,-79.4248 43.6276,-79.4061 43.6252,-79.4052 43.6259,-79.4010 43.6192,-79.3946 43.6122,-79.3931 43.6103,-79.3896 43.6103,-79.3836 43.6144,-79.3709 43.6253,-79.3559 43.6108,-79.3437 43.6129,-79.3392 43.6262,-79.3264 43.6260,-79.3165 43.6468,-79.3184 43.6485,-79.3134 43.6573,-79.3008 43.6638,-79.2975 43.6692,-79.2844 43.6696,-79.2791 43.6879,-79.2610 43.6998,-79.2326 43.7101,-79.2215 43.7210,-79.2185 43.7272,-79.2122 43.7446,-79.1893 43.7535,-79.1728 43.7586,-79.1523 43.7937,-79.1134 43.7950,-79.1212 43.7963,-79.1203 43.7974,-79.1241 43.8003,-79.1253 43.8018,-79.1307 43.8008,-79.1352 43.8029,-79.1336 43.8071,-79.1342 43.8084,-79.1406 43.8107,-79.1432 43.8101,-79.1461 43.8140,-79.1519 43.8554,-79.1703 43.8116,-79.3582 43.7498,-79.6392 43.7358,-79.6301</polygon>
+			<geocode>
+				<valueName>profile:CAP-CP:Location:0.3</valueName>
+				<value>3520005</value>
+			</geocode>
+		</area>
+	</info>
+	<Signature Id="NAADS Signature" xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+				<DigestValue>JlRqcpd812DuLTA2gNSdGHy64TFr+OSUD2NmJFgcAb0=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>UKqow2dbvH30BZ3T7MOgJQeOVVL+bvB/+fl5Ef6KZYYHCuqoB3T5W3pVQxcKr/Xj1BIEu4HESF8ONSTCdsZhK6axAAsNwLjWbwKdLP/dJq/xltWZ0kzXYJyP+EwOqWBfRnyosfc54B+Kx4jYp6xxkcFRabA0N6rYSK+L6vVoQy/HMuRqUtKcsz90KeGeUfFqBwE25cAGoC0ze+S4cpF1kHpgcd02c2Gc//L8I1VhxZEFqXBZpSxhULCpQn/jjGsF2nNDDSjt44QW82YwJqT3XVK9ForVruTk5r/0d5y/hmvgqO5MYhj/SilGDH8ZBMKb0sxcitRZsfzdj4XtnixxSA==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIF0jCCBLqgAwIBAgIQQ4q3qW4WAZEmJ2Y55X+ovjANBgkqhkiG9w0BAQUFADCBtTELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykxMDEvMC0GA1UEAxMmVmVyaVNpZ24gQ2xhc3MgMyBTZWN1cmUgU2VydmVyIENBIC0gRzMwHhcNMTIwNTI5MDAwMDAwWhcNMTgwNTMwMjM1OTU5WjCBvjELMAkGA1UEBhMCQ0ExEDAOBgNVBAgTB09udGFyaW8xETAPBgNVBAcUCE9ha3ZpbGxlMRwwGgYDVQQKFBNQZWxtb3JleCBNZWRpYSBJbmMuMRswGQYDVQQLFBJOZXR3b3JrIE9wZXJhdGlvbnMxMzAxBgNVBAsUKlRlcm1zIG9mIHVzZSBhdCB3d3cudmVyaXNpZ24uY29tL3JwYSAoYykwNTEaMBgGA1UEAxQRZHNzMS5wZWxtb3JleC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDhBfGX2hawqJR+ZJqLOgHYJw+/dy3VBeAEkGMvC8Gk0sOsPLzc+4mPLSpy9ufOM7EHrZAGh10ZQPWQTUhC6hzJgEhEA5SXTGVM4cDJjyqtKZcPcvFr0rA9Meq1nX7yfquBF0jcjWISa1H5w48MeTjppcpEYYrLXXKrP76+kuStFy9KyvTXiDAYW+zSLKqSWp83diM3BlDYUUeB9VZPBRqgmZbmudJmAfMhN676/uNbEDcLOmTpp68nh68U6HkjFUJD1Mm8ko3pmcpBOBuxsaTbYWJX7cTG6MUU/y45zS6NJ+7+zTv+crojy3mMeQswKdtKqNxgjWMC2asEpSJLbTARAgMBAAGjggHRMIIBzTAJBgNVHRMEAjAAMAsGA1UdDwQEAwIFoDBFBgNVHR8EPjA8MDqgOKA2hjRodHRwOi8vU1ZSU2VjdXJlLUczLWNybC52ZXJpc2lnbi5jb20vU1ZSU2VjdXJlRzMuY3JsMEQGA1UdIAQ9MDswOQYLYIZIAYb4RQEHFwMwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHwYDVR0jBBgwFoAUDURcFlNEwYJ+HSCrJfQBY9i+eaUwdgYIKwYBBQUHAQEEajBoMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC52ZXJpc2lnbi5jb20wQAYIKwYBBQUHMAKGNGh0dHA6Ly9TVlJTZWN1cmUtRzMtYWlhLnZlcmlzaWduLmNvbS9TVlJTZWN1cmVHMy5jZXIwbgYIKwYBBQUHAQwEYjBgoV6gXDBaMFgwVhYJaW1hZ2UvZ2lmMCEwHzAHBgUrDgMCGgQUS2u5KJYGDLvQUjibKaxLB4shBRgwJhYkaHR0cDovL2xvZ28udmVyaXNpZ24uY29tL3ZzbG9nbzEuZ2lmMA0GCSqGSIb3DQEBBQUAA4IBAQA1+UEbk18WrNlP635nBmjjpZOrgwVRwOFUd/29bm9UkCmwS6R2N5OBflKLFSY6wCy8LBg5wZWAJbI/mQ8LQyzDUe+oIpLcMnuoji05NKgSkmEvJ01NTQKki/hlueUN6FTciiVCkMXJ8XdStH9RflKBqZX9IEZzE/b16Cp3MgnxjdFyW1o3l41T0+FucdLE/zvj5CZ6siefw813nTtMGzMu2/jEx6vUJDGBvx2m5Af4CA5924Mfh2xsCLYulSKaHkNV8P+gKdV0+zjrajosbOSDiVWY34Qmvj24JEKLETZFI+AVOSWN559PKKEvT7SirDdFqP0OaD1HV05bes65M+LJ</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+		<Object xmlns="">
+			<SignatureProperties>
+				<SignatureProperty Id="NAADS-DSS1" Target="https://dss1-staging.naad-adna.pelmorex.com">
+					<xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd"/>
+				</SignatureProperty>
+				<SignatureProperty Id="NAADS-DSS2" Target="https://dss2-staging.naad-adna.pelmorex.com">
+					<xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd"/>
+				</SignatureProperty>
+			</SignatureProperties>
+		</Object>
+	</Signature>
+</alert>

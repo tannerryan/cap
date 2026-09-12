@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<alert xmlns:ns2="http://gov.fema.ipaws.services/caprequest" xmlns="urn:oasis:names:tc:emergency:cap:1.2" xmlns:ns4="http://gov.fema.ipaws.services/IPAWS_CAPService/" xmlns:ns3="http://gov.fema.ipaws.services/capresponse">
+
+    <identifier>NWS-IDP-DEV-3889295-3321272</identifier>
+
+    <sender>w-nws.webmaster@noaa.gov</sender>
+
+    <sent>2020-01-23T08:23:00-06:00</sent>
+
+    <status>Actual</status>
+
+    <msgType>Alert</msgType>
+
+    <scope>Public</scope>
+
+    <code>IPAWSv1.0</code>
+
+    <note></note>
+
+    <info>
+
+        <language>en-US</language>
+
+        <category>Met</category>
+
+        <event>Tornado Warning</event>
+
+        <responseType>Shelter</responseType>
+
+        <urgency>Immediate</urgency>
+
+        <severity>Extreme</severity>
+
+        <certainty>Observed</certainty>
+
+        <eventCode>
+
+            <valueName>SAME</valueName>
+
+            <value>TOR</value>
+
+        </eventCode>
+
+        <eventCode>
+
+            <valueName>NationalWeatherService</valueName>
+
+            <value>TOW</value>
+
+        </eventCode>
+
+        <effective>2020-01-23T08:23:00-06:00</effective>
+
+        <onset>2020-01-23T08:23:00-06:00</onset>
+
+        <expires>2020-01-23T08:28:00-06:00</expires>
+
+        <senderName>NWS Shreveport LA</senderName>
+
+        <headline>Tornado Warning issued January 23 at 2:23PM CST until January 23 at 8:28AM CST by NWS Shreveport LA</headline>
+
+        <description>The National Weather Service in Shreveport has issued a
+
+* Tornado Warning for...
+
+Southern Caldwell Parish in north central Louisiana...
+
+Northeastern La Salle Parish in north central Louisiana...
+
+* Until 228 PM
+
+* At 223 PM CDT, a large and extremely dangerous tornado was located
+
+near Midway, or 22 miles northeast of Pineville, moving northeast
+
+at 40 mph.
+
+This is a PARTICULARLY DANGEROUS SITUATION. TAKE COVER NOW!
+
+HAZARD...Damaging tornado.
+
+SOURCE...Radar indicated rotation.
+
+IMPACT...You are in a life-threatening situation. Flying debris
+
+may be deadly to those caught without shelter. Mobile
+
+homes will be destroyed. Considerable damage to homes,
+
+businesses, and vehicles is likely and complete
+
+destruction is possible.
+
+* The tornado will be near...
+
+Jena around 410 PM CDT.
+
+Midway around 415 PM CDT.
+
+Other locations impacted by this tornadic thunderstorm include Nebo.</description>
+
+        <instruction>To repeat, a large, extremely dangerous and potentially deadly
+
+tornado is developing. To protect your life, TAKE COVER NOW! Move to
+
+a basement or an interior room on the lowest floor of a sturdy
+
+building. Avoid windows. If you are outdoors, in a mobile home, or in
+
+a vehicle, move to the closest substantial shelter and protect
+
+yourself from flying debris.</instruction>
+
+        <web>http://www.weather.gov</web>
+
+        <parameter>
+
+            <valueName>eventMotionDescription</valueName>
+
+            <value>2020-01-23T15:01:00.000-06:00...storm...209DEG...35KT...31.6,-92.19 </value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>hailSize</valueName>
+
+            <value>1.75</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDetection</valueName>
+
+            <value>RADAR INDICATED</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDamageThreat</valueName>
+
+            <value>CONSIDERABLE</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>VTEC</valueName>
+
+            <value>/O.NEW.KSHV.TO.W.0048.200123T1423Z-200123T1428Z/</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>EAS-ORG</valueName>
+
+            <value>WXR</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>PIL</valueName>
+
+            <value>SHVTORSHV</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>EAS</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>NWEM</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>eventEndingTime</valueName>
+
+            <value>2020-01-23T08:28:00-06:00</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>WEAHandling</valueName>
+
+            <value>Imminent Threat</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMlongtext</valueName>
+
+            <value>National Weather Service: TORNADO WARNING in this area until 8:28 AM CST. Take shelter now in a basement or an interior room on the lowest floor of a sturdy building. If you are outdoors, in a mobile home, or in a vehicle, move to the closest substantial shelter and protect yourself from flying debris. Check media.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMtext</valueName>
+
+            <value>NWS: TORNADO WARNING in this area til 8:28 AM CST. Take shelter now. Check media.</value>
+
+        </parameter>
+
+        <area>
+
+            <areaDesc>La Salle, LA; Caldwell, LA</areaDesc>
+
+            <polygon>31.72,-92.01 31.66,-92.04 31.55,-92.15 31.6,-92.28 31.93,-92.12 31.92,-92.01 31.72,-92.01</polygon>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC021</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022021</value>
+
+            </geocode>
+
+        </area>
+
+    </info>
+
+    <info>
+
+        <language>es-US</language>
+
+        <category>Met</category>
+
+        <event>Tornado Warning</event>
+
+        <responseType>Shelter</responseType>
+
+        <urgency>Immediate</urgency>
+
+        <severity>Extreme</severity>
+
+        <certainty>Observed</certainty>
+
+        <eventCode>
+
+            <valueName>SAME</valueName>
+
+            <value>TOR</value>
+
+        </eventCode>
+
+        <eventCode>
+
+            <valueName>NationalWeatherService</valueName>
+
+            <value>TOW</value>
+
+        </eventCode>
+
+        <effective>2020-01-23T08:23:00-06:00</effective>
+
+        <onset>2020-01-23T08:23:00-06:00</onset>
+
+        <expires>2020-01-23T08:28:00-06:00</expires>
+
+        <senderName>NWS Shreveport LA</senderName>
+
+        <headline>Tornado Warning issued January 23 at 2:23PM CST until January 23 at 8:28AM CST by NWS Shreveport LA</headline>
+
+        <description>The National Weather Service in Shreveport has issued a
+
+* Tornado Warning for...
+
+Southern Caldwell Parish in north central Louisiana...
+
+Northeastern La Salle Parish in north central Louisiana...
+
+* Until 228 PM
+
+* At 223 PM CDT, a large and extremely dangerous tornado was located
+
+near Midway, or 22 miles northeast of Pineville, moving northeast
+
+at 40 mph.
+
+This is a PARTICULARLY DANGEROUS SITUATION. TAKE COVER NOW!
+
+HAZARD...Damaging tornado.
+
+SOURCE...Radar indicated rotation.
+
+IMPACT...You are in a life-threatening situation. Flying debris
+
+may be deadly to those caught without shelter. Mobile
+
+homes will be destroyed. Considerable damage to homes,
+
+businesses, and vehicles is likely and complete
+
+destruction is possible.
+
+* The tornado will be near...
+
+Jena around 410 PM CDT.
+
+Midway around 415 PM CDT.
+
+Other locations impacted by this tornadic thunderstorm include Nebo.</description>
+
+        <instruction>To repeat, a large, extremely dangerous and potentially deadly
+
+tornado is developing. To protect your life, TAKE COVER NOW! Move to
+
+a basement or an interior room on the lowest floor of a sturdy
+
+building. Avoid windows. If you are outdoors, in a mobile home, or in
+
+a vehicle, move to the closest substantial shelter and protect
+
+yourself from flying debris.</instruction>
+
+        <web>http://www.weather.gov</web>
+
+        <parameter>
+
+            <valueName>eventMotionDescription</valueName>
+
+            <value>2020-01-23T15:01:00.000-06:00...storm...209DEG...35KT...31.6,-92.19 </value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>hailSize</valueName>
+
+            <value>1.75</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDetection</valueName>
+
+            <value>RADAR INDICATED</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>tornadoDamageThreat</valueName>
+
+            <value>CONSIDERABLE</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>VTEC</valueName>
+
+            <value>/O.NEW.KSHV.TO.W.0048.200123T1423Z-200123T1428Z/</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>EAS-ORG</valueName>
+
+            <value>WXR</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>PIL</valueName>
+
+            <value>SHVTORSHV</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>EAS</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>BLOCKCHANNEL</valueName>
+
+            <value>NWEM</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>eventEndingTime</valueName>
+
+            <value>2020-01-23T08:28:00-06:00</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMlongtext</valueName>
+
+            <value>Servicio Nacional de Meteorologia: AVISO DE TORNADO en efecto hasta las 8:28 AM CST. Busque refugio ahora en un sotano o en el interior de un cuarto en el nivel mas bajo de un edificio seguro. Si esta al aire libre, en una casa movil, o en un vehiculo, debe ir al edificio seguro mas cercano y protegerse de proyectiles. Consulte los medios informativos.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>CMAMtext</valueName>
+
+            <value>SNM: AVISO DE TORNADO hasta las 8:28 AM CST. Refugiese ahora. Consulte medios informativos.</value>
+
+        </parameter>
+
+        <parameter>
+
+            <valueName>WEAHandling</valueName>
+
+            <value>Imminent Threat</value>
+
+        </parameter>
+
+        <area>
+
+            <areaDesc>La Salle, LA; Caldwell, LA</areaDesc>
+
+            <polygon>31.72,-92.01 31.66,-92.04 31.55,-92.15 31.6,-92.28 31.93,-92.12 31.92,-92.01 31.72,-92.01</polygon>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>UGC</valueName>
+
+                <value>LAC021</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022059</value>
+
+            </geocode>
+
+            <geocode>
+
+                <valueName>SAME</valueName>
+
+                <value>022021</value>
+
+            </geocode>
+
+        </area>
+
+    </info>
+
+</alert>

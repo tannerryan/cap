@@ -1,6 +1,5 @@
-// Copyright (c) 2019 Tanner Ryan. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
+// Copyright (c) 2019 Tanner Ryan. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 package cap
 
@@ -10,81 +9,75 @@ import (
 	"errors"
 )
 
-// Category is a code denoting the appropriate handling of the alert message
+// Category identifies the category of an alert's subject event.
 type Category int
 
 const (
-	// CategoryGeo :: Geophysical (inc. landslide)
-	CategoryGeo Category = 0
-	// CategoryMet :: Meteorological (inc. flood)
-	CategoryMet Category = 1
-	// CategorySafety :: General emergency and public safety
-	CategorySafety Category = 2
-	// CategorySecurity :: Law enforcement, military, homeland and local/private
-	// security
-	CategorySecurity Category = 3
-	// CategoryRescue :: Rescue and recovery
-	CategoryRescue Category = 4
-	// CategoryFire :: Fire suppression and rescue
-	CategoryFire Category = 5
-	// CategoryHealth :: Medical and public health
-	CategoryHealth Category = 6
-	// CategoryEnv :: Pollution and other environmental
-	CategoryEnv Category = 7
-	// CategoryTransport :: Public and private transportation
-	CategoryTransport Category = 8
-	// CategoryInfra :: Utility, telecommunication, other non-transport
-	// infrastructure
-	CategoryInfra Category = 9
-	// CategoryCBRNE :: Chemical, Biological, Radiological, Nuclear or
-	// High-Yield Explosive threat or attack
-	CategoryCBRNE Category = 10
-	// CategoryOther :: Other events
-	CategoryOther Category = 11
+	// CategoryGeo covers geophysical events such as landslides.
+	CategoryGeo Category = iota + 1
+	// CategoryMet covers weather events, including floods.
+	CategoryMet
+	// CategorySafety covers general emergencies and public safety.
+	CategorySafety
+	// CategorySecurity covers law enforcement, military, and security events.
+	CategorySecurity
+	// CategoryRescue covers rescue and recovery.
+	CategoryRescue
+	// CategoryFire covers fire suppression and rescue.
+	CategoryFire
+	// CategoryHealth covers medical and public health events.
+	CategoryHealth
+	// CategoryEnv covers pollution and other environmental events.
+	CategoryEnv
+	// CategoryTransport covers public and private transportation.
+	CategoryTransport
+	// CategoryInfra covers utilities and other infrastructure.
+	CategoryInfra
+	// CategoryCBRNE covers chemical, biological, radiological, nuclear, and
+	// explosive threats.
+	CategoryCBRNE
+	// CategoryOther covers events outside the other categories.
+	CategoryOther
 )
 
-// Category mapping
-var (
-	CategoryMapping = map[string]Category{
-		"Geo":       CategoryGeo,
-		"Met":       CategoryMet,
-		"Safety":    CategorySafety,
-		"Security":  CategorySecurity,
-		"Rescue":    CategoryRescue,
-		"Fire":      CategoryFire,
-		"Health":    CategoryHealth,
-		"Env":       CategoryEnv,
-		"Transport": CategoryTransport,
-		"Infra":     CategoryInfra,
-		"CBRNE":     CategoryCBRNE,
-		"Other":     CategoryOther,
-	}
-)
+// CategoryMapping maps CAP category values to Category constants. Callers must
+// not modify it.
+var CategoryMapping = map[string]Category{
+	"Geo":       CategoryGeo,
+	"Met":       CategoryMet,
+	"Safety":    CategorySafety,
+	"Security":  CategorySecurity,
+	"Rescue":    CategoryRescue,
+	"Fire":      CategoryFire,
+	"Health":    CategoryHealth,
+	"Env":       CategoryEnv,
+	"Transport": CategoryTransport,
+	"Infra":     CategoryInfra,
+	"CBRNE":     CategoryCBRNE,
+	"Other":     CategoryOther,
+}
 
-// stringToCode will perform the mapping of string to a Category code. An error
-// will be thrown if an unknown value is encountered.
+// stringToCategoryCode parses a CAP category value.
 func stringToCategoryCode(t *Category, val string) error {
 	enum, ok := CategoryMapping[val]
 	if !ok {
-		return errors.New("Error: illegal value " + val + " for Category code")
+		return errors.New("cap: invalid Category value " + val)
 	}
 	*t = enum
 	return nil
 }
 
-// String converts the Category code back to a string.
+// String returns the CAP category value.
 func (t Category) String() string {
 	for key, val := range CategoryMapping {
 		if val == t {
 			return key
 		}
 	}
-	// logically never reached
 	return ""
 }
 
-// UnmarshalXML will be used during the XML unmarshaling for conversion to
-// Category code.
+// UnmarshalXML decodes a CAP category value.
 func (t *Category) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) error {
 	var val string
 	if err := decoder.DecodeElement(&val, &elem); err != nil {
@@ -93,13 +86,12 @@ func (t *Category) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) err
 	return stringToCategoryCode(t, val)
 }
 
-// MarshalXML converts the Category code back to a string when marshaling XML.
+// MarshalXML encodes a CAP category value.
 func (t Category) MarshalXML(encoder *xml.Encoder, elem xml.StartElement) error {
-	return encoder.EncodeElement(t.String(), elem)
+	return marshalEnumXML(encoder, elem, t.String(), "Category")
 }
 
-// UnmarshalJSON will be used during the JSON unmarshaling for conversion to
-// Category code.
+// UnmarshalJSON decodes a CAP category value.
 func (t *Category) UnmarshalJSON(buff []byte) error {
 	var val string
 	if err := json.Unmarshal(buff, &val); err != nil {
@@ -108,7 +100,7 @@ func (t *Category) UnmarshalJSON(buff []byte) error {
 	return stringToCategoryCode(t, val)
 }
 
-// MarshalJSON converts the Category code back to a string when marshaling JSON.
+// MarshalJSON encodes a CAP category value.
 func (t Category) MarshalJSON() ([]byte, error) {
-	return json.Marshal(t.String())
+	return marshalEnumJSON(t.String(), "Category")
 }

@@ -1,183 +1,159 @@
-// BSD 2-Clause License
-//
-// Copyright (c) 2019 Tanner Ryan. All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without
-// modification, are permitted provided that the following conditions are met:
-//
-// 1. Redistributions of source code must retain the above copyright notice, this
-//    list of conditions and the following disclaimer.
-//
-// 2. Redistributions in binary form must reproduce the above copyright notice,
-//    this list of conditions and the following disclaimer in the documentation
-//    and/or other materials provided with the distribution.
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-// The names "OASIS" and “CAP” are trademarks of OASIS, the owner and developer
-// of this specification. Copyright (c) 2010 OASIS. All rights reserved.
+// Copyright (c) 2019 Tanner Ryan. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 package cap
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"strings"
+)
 
-// Alert provides basic information about the current message: its purpose, its
-// source and its status, as well as a unique identifier for the current message
-// and links to any other, related messages.  An Alert struct may be used alone
-// for message acknowledgements, cancellations or other system functions, but
-// most Alert struct will include at least one Info struct.
+// Alert is a CAP message with routing details and optional event information.
 type Alert struct {
-	XMLName xml.Name `xml:"urn:oasis:names:tc:emergency:cap:1.2 alert" json:"alert"` // Reference CAP URN (REQUIRED)
+	XMLName xml.Name `xml:"urn:oasis:names:tc:emergency:cap:1.2 alert" json:"-"` // CAP XML root.
 
-	Identifier  string   `xml:"identifier" json:"identifier"`   // Identifier of the alert message (REQUIRED)
-	Sender      string   `xml:"sender" json:"sender"`           // Identifier of the sender of the alert message (REQUIRED)
-	Sent        DateTime `xml:"sent" json:"sent"`               // Time and date of the origination of the alert message (REQUIRED)
-	Status      Status   `xml:"status" json:"status"`           // Code denoting the appropriate handling of the alert message (REQUIRED)
-	MsgType     MsgType  `xml:"msgType" json:"msgType"`         // Code denoting the nature of the alert message (REQUIRED)
-	Source      string   `xml:"source" json:"source"`           // Text identifying the source of the alert message
-	Scope       Scope    `xml:"scope" json:"scope"`             // Code denoting the intended distribution of the alert message (REQUIRED)
-	Restriction string   `xml:"restriction" json:"restriction"` // Text describing the rule for limiting the distribution of the restricted alert message (CONDITIONAL)
-	Addresses   string   `xml:"addresses" json:"addresses"`     // Group listing of intended recipients of the alert message (CONDITIONAL)
-	Code        []string `xml:"code" json:"code"`               // Code denoting special handling of the alert message
-	Note        string   `xml:"note" json:"note"`               // Text describing the purpose or significance of the alert message
-	References  List     `xml:"references" json:"references"`   // Group listing identifying earlier message(s) reference by the alert message
-	Incidents   string   `xml:"incidents" json:"incidents"`     // Group listing naming the referent incident(s) of the alert message
+	Identifier  string   `xml:"identifier" json:"identifier"`                       // Unique message ID. Required.
+	Sender      string   `xml:"sender" json:"sender"`                               // Sender ID. Required.
+	Sent        DateTime `xml:"sent" json:"sent"`                                   // Time the message was sent. Required.
+	Status      Status   `xml:"status" json:"status"`                               // Message status. Required.
+	MsgType     MsgType  `xml:"msgType" json:"msgType"`                             // Message type. Required.
+	Source      string   `xml:"source,omitempty" json:"source,omitempty"`           // Message source.
+	Scope       Scope    `xml:"scope" json:"scope"`                                 // Distribution scope. Required.
+	Restriction string   `xml:"restriction,omitempty" json:"restriction,omitempty"` // Rule for restricted distribution.
+	Addresses   string   `xml:"addresses,omitempty" json:"addresses,omitempty"`     // Intended recipient identifiers or addresses.
+	Code        []string `xml:"code,omitempty" json:"code,omitempty"`               // Special handling codes.
+	Note        string   `xml:"note,omitempty" json:"note,omitempty"`               // Message note.
+	References  *List    `xml:"references,omitempty" json:"references,omitempty"`   // Earlier messages referenced by this message.
+	Incidents   string   `xml:"incidents,omitempty" json:"incidents,omitempty"`     // Related incident IDs.
 
-	Info      []Info      `xml:"info" json:"info"`           // Container for all component parts of the info sub-element of the alert message
-	Signature []Signature `xml:"Signature" json:"signature"` // Standard XML Digital Signature, not originally defined in CAP, used in CAP-CP and NAADS
+	Info       []Info      `xml:"info,omitempty" json:"info,omitempty"`           // Event details.
+	Signature  []Signature `xml:"Signature,omitempty" json:"signature,omitempty"` // XML signatures.
+	Extensions []Extension `xml:",any" json:"extensions,omitempty"`               // Additional XML Signature elements.
 }
 
-// Info struct describes an anticipated or actual event in terms of its urgency
-// (time available to prepare), severity (intensity of impact) and certainty
-// (confidence in the observation or prediction), as well as providing both
-// categorical and textual descriptions of the subject event.  It may also
-// provide instructions for appropriate response by message recipients and
-// various other details (hazard duration, technical parameters, contact
-// information, links to additional information sources, etc.)  Multiple Info
-// structs may be used to describe differing parameters (e.g., for different
-// probability or intensity “bands”) or to provide the information in multiple
-// languages.
+// Info describes an event and the action recipients should take. An alert may
+// have several Info values for different areas or languages.
 type Info struct {
-	XMLName xml.Name `xml:"info"` // Info CAP
+	XMLName xml.Name `xml:"info" json:"-"` // CAP info element.
 
-	Language     string         `xml:"language" json:"language"`         // Code denoting the language of the info sub-element of the alert message
-	Category     []Category     `xml:"category" json:"category"`         // Code denoting the category of the subject event of the alert message (REQUIRED)
-	Event        string         `xml:"event" json:"event"`               // Text denoting the type of the subject event of the alert message (REQUIRED)
-	ResponseType []ResponseType `xml:"responseType" json:"responseType"` // Code denoting the type of action recommended for the target audience
-	Urgency      Urgency        `xml:"urgency" json:"urgency"`           // Code denoting the urgency of the subject event of the alert message (REQUIRED)
-	Severity     Severity       `xml:"severity" json:"severity"`         // Code denoting the severity of the subject event of the alert message (REQUIRED)
-	Certainty    Certainty      `xml:"certainty" json:"certainty"`       // Code denoting the certainty of the subject event of the alert message (REQUIRED)
-	Audience     string         `xml:"audience" json:"audience"`         // Text describing the intended audience of the alert message
-	EventCode    []KeyValue     `xml:"eventCode" json:"eventCode"`       // System-specific code identifying the event type of the alert message
-	Effective    DateTime       `xml:"effective" json:"effective"`       // Effective time of the information of the alert message
-	Onset        DateTime       `xml:"onset" json:"onset"`               // Expected time of the beginning of the subject event of the alert message
-	Expires      DateTime       `xml:"expires" json:"expires"`           // Expiry time of the information of the alert message
-	SenderName   string         `xml:"senderName" json:"senderName"`     // Text naming the originator of the alert message
-	Headline     string         `xml:"headline" json:"headline"`         // Text headline of the alert message
-	Description  string         `xml:"description" json:"description"`   // Text describing the subject event of the alert message
-	Instruction  string         `xml:"instruction" json:"instruction"`   // Text describing the recommended action to be taken by recipients of the alert message
-	Web          string         `xml:"web" json:"web"`                   // Identifier of the hyperlink associating additional information with the alert message
-	Contact      string         `xml:"contact" json:"contact"`           // Text describing the contact for follow-up and confirmation of the alert message
-	Parameter    []KeyValue     `xml:"parameter" json:"parameter"`       // System-specific additional parameter associated with the alert message
+	Language     string         `xml:"language,omitempty" json:"language,omitempty"`         // Content language.
+	Category     []Category     `xml:"category" json:"category"`                             // Event categories. At least one is required.
+	Event        string         `xml:"event" json:"event"`                                   // Event name. Required.
+	ResponseType []ResponseType `xml:"responseType,omitempty" json:"responseType,omitempty"` // Recommended actions.
+	Urgency      Urgency        `xml:"urgency" json:"urgency"`                               // Event urgency. Required.
+	Severity     Severity       `xml:"severity" json:"severity"`                             // Event severity. Required.
+	Certainty    Certainty      `xml:"certainty" json:"certainty"`                           // Event certainty. Required.
+	Audience     string         `xml:"audience,omitempty" json:"audience,omitempty"`         // Intended audience.
+	EventCode    []KeyValue     `xml:"eventCode,omitempty" json:"eventCode,omitempty"`       // Event codes.
+	Effective    *DateTime      `xml:"effective,omitempty" json:"effective,omitempty"`       // Time the information takes effect.
+	Onset        *DateTime      `xml:"onset,omitempty" json:"onset,omitempty"`               // Expected start time.
+	Expires      *DateTime      `xml:"expires,omitempty" json:"expires,omitempty"`           // Expiration time.
+	SenderName   string         `xml:"senderName,omitempty" json:"senderName,omitempty"`     // Sender's display name.
+	Headline     string         `xml:"headline,omitempty" json:"headline,omitempty"`         // Short headline.
+	Description  string         `xml:"description,omitempty" json:"description,omitempty"`   // Event description.
+	Instruction  string         `xml:"instruction,omitempty" json:"instruction,omitempty"`   // Instructions for recipients.
+	Web          string         `xml:"web,omitempty" json:"web,omitempty"`                   // Link to more information.
+	Contact      string         `xml:"contact,omitempty" json:"contact,omitempty"`           // Follow-up contact.
+	Parameter    []KeyValue     `xml:"parameter,omitempty" json:"parameter,omitempty"`       // Extra system values.
 
-	Resource []Resource `xml:"resource" json:"resource"` // Container for all component parts of the resource sub-element of the info sub-element of the alert element
-	Area     []Area     `xml:"area" json:"area"`         // Container for all component parts of the area sub-element of the info sub-element of the alert message
+	Resource []Resource `xml:"resource,omitempty" json:"resource,omitempty"` // Related files.
+	Area     []Area     `xml:"area,omitempty" json:"area,omitempty"`         // Affected areas.
 }
 
-// Resource struct provides an optional reference to additional information
-// related to the Info struct within which it appears in the form of a digital
-// asset such as an image or audio file.
+// LanguageCode returns Language, or the CAP default of en-US.
+func (i Info) LanguageCode() string {
+	language := strings.TrimSpace(i.Language)
+	if language == "" {
+		return "en-US"
+	}
+	return language
+}
+
+// EffectiveTime returns Effective, or the alert sent time when Effective is
+// omitted.
+func (i Info) EffectiveTime(sent DateTime) DateTime {
+	if i.Effective == nil {
+		return sent
+	}
+	return *i.Effective
+}
+
+// Resource describes a file related to an Info value.
 type Resource struct {
-	XMLName xml.Name `xml:"resource" json:"resource"` // Resouce CAP
+	XMLName xml.Name `xml:"resource" json:"-"` // CAP resource element.
 
-	ResourceDesc string `xml:"resourceDesc" json:"resourceDesc"` // Text describing the type and content of the resource file (REQUIRED)
-	MimeType     string `xml:"mimeType" json:"mimeType"`         // Identifier of the MIME content type and sub-type describing the resource file (REQUIRED)
-	Size         int    `xml:"size" json:"size"`                 // Integer indicating the size of the resource file
-	URI          string `xml:"uri" json:"uri"`                   // Identifier of the hyperlink for the resource file
-	DerefURI     string `xml:"derefUri" json:"derefUri"`         // Base-64 encoded data content of the resource file (CONDITIONAL)
-	Digest       string `xml:"digest" json:"digest"`             // Code representing the digital digest ("hash") computed from the resource file
-
+	ResourceDesc string `xml:"resourceDesc" json:"resourceDesc"`             // File description. Required.
+	MimeType     string `xml:"mimeType" json:"mimeType"`                     // MIME type. Required.
+	Size         *int64 `xml:"size,omitempty" json:"size,omitempty"`         // File size in bytes.
+	URI          string `xml:"uri,omitempty" json:"uri,omitempty"`           // File location.
+	DerefURI     string `xml:"derefUri,omitempty" json:"derefUri,omitempty"` // Base64 encoded file data.
+	Digest       string `xml:"digest,omitempty" json:"digest,omitempty"`     // SHA-1 file digest.
 }
 
-// Area struct describes a geographic area to which the Info struct in which it
-// appears applies.  Textual and coded descriptions (such as postal codes) are
-// supported, but the preferred representations use geospatial shapes (polygons
-// and circles) and an altitude or altitude range, expressed in standard
-// latitude / longitude / altitude terms in accordance with a specified
-// geospatial datum.
+// Area describes a place affected by an event.
 type Area struct {
-	XMLName xml.Name `xml:"area" json:"area"` // Area CAP
+	XMLName xml.Name `xml:"area" json:"-"` // CAP area element.
 
-	AreaDesc string     `xml:"areaDesc" json:"areaDesc"` // Text describing the affected area of the alert message (REQUIRED)
-	Polygon  List       `xml:"polygon" json:"polygon"`   // Paired values of points defining a polygon that delineates the affected area of the alert message
-	Circle   []string   `xml:"circle" json:"circle"`     // Paired values of a point and radius delineating the affected area of the alert message
-	Geocode  []KeyValue `xml:"geocode" json:"geocode"`   // Geographic code delineating the affected area of the alert message
-	Altitude float32    `xml:"altitude" json:"altitude"` // Specific or minimum altitude of the affected area of the alert message
-	Ceiling  float32    `xml:"ceiling" json:"ceiling"`   // Maximum altitude of the affected area of the alert message (CONDITIONAL)
+	AreaDesc string     `xml:"areaDesc" json:"areaDesc"`                     // Area description. Required.
+	Polygon  []List     `xml:"polygon,omitempty" json:"polygon,omitempty"`   // Affected polygons.
+	Circle   []string   `xml:"circle,omitempty" json:"circle,omitempty"`     // Affected circles.
+	Geocode  []KeyValue `xml:"geocode,omitempty" json:"geocode,omitempty"`   // Area codes.
+	Altitude *float64   `xml:"altitude,omitempty" json:"altitude,omitempty"` // Altitude or lower bound in feet above mean sea level.
+	Ceiling  *float64   `xml:"ceiling,omitempty" json:"ceiling,omitempty"`   // Upper bound in feet above mean sea level.
 }
 
-// KeyValue is a generic element for representing key-value pairs
+// KeyValue holds a named CAP value.
 type KeyValue struct {
-	ValueName string `xml:"valueName" json:"valueName"`
-	Value     string `xml:"value" json:"value"`
+	ValueName string `xml:"valueName" json:"valueName"` // Name of the code or value domain.
+	Value     string `xml:"value" json:"value"`         // Value within that domain.
 }
 
-// Signature is a standard XML digital signature. This is not included in the
-// original CAP protocol, but is implemented in CAP-CP and is enforced in
-// Pelmorex's National Alert Aggregation & Dissemination System (NAADS).
+// Signature holds commonly used fields from an enveloped XML signature.
 type Signature struct {
-	XMLName xml.Name `xml:"http://www.w3.org/2000/09/xmldsig# Signature" json:"signature"`
+	XMLName xml.Name `xml:"http://www.w3.org/2000/09/xmldsig# Signature" json:"-"` // XML Signature element.
 
-	ID                  string              `xml:"Id,attr" json:"id"`
-	SignedInfo          SignedInfo          `xml:"SignedInfo" json:"signedInfo"`
-	SignatureValue      string              `xml:"SignatureValue" json:"signatureValue"`
-	X509Certificate     string              `xml:"KeyInfo>X509Data>X509Certificate" json:"x509Certificate"`
-	SignatureProperties []SignatureProperty `xml:"Object>SignatureProperties>SignatureProperty" json:"signatureProperty"`
+	ID                  string              `xml:"Id,attr" json:"id"`                                                     // Signature ID.
+	SignedInfo          SignedInfo          `xml:"SignedInfo" json:"signedInfo"`                                          // Signed algorithms and references.
+	SignatureValue      string              `xml:"SignatureValue" json:"signatureValue"`                                  // Encoded signature value.
+	X509Certificate     []string            `xml:"KeyInfo>X509Data>X509Certificate" json:"x509Certificate"`               // Encoded certificates.
+	SignatureProperties []SignatureProperty `xml:"Object>SignatureProperties>SignatureProperty" json:"signatureProperty"` // Signed properties.
 }
 
-// SignedInfo elements references the signed data and specifies what algorithms
-// are used.
+// SignedInfo references signed data and specifies the algorithms used.
 type SignedInfo struct {
-	CanonicalizationMethod Algorithm `xml:"CanonicalizationMethod" json:"canonicalizationMethod"`
-	SignatureMethod        Algorithm `xml:"SignatureMethod" json:"signatureMethod"`
-	Reference              Reference `xml:"Reference" json:"reference"`
+	CanonicalizationMethod Algorithm   `xml:"CanonicalizationMethod" json:"canonicalizationMethod"` // Canonical XML algorithm.
+	SignatureMethod        Algorithm   `xml:"SignatureMethod" json:"signatureMethod"`               // Signature algorithm.
+	Reference              []Reference `xml:"Reference" json:"reference"`                           // Signed content references.
 }
 
-// Reference elements specify the resource being signed by URI reference and any
-// transforms to be applied to the resource prior to signing.
+// Reference describes signed data and any transforms applied to it.
 type Reference struct {
-	URI          string    `xml:"URI,attr" json:"uri"`
-	Transform    Algorithm `xml:"Transforms>Transform" json:"transform"`
-	DigestMethod Algorithm `xml:"DigestMethod" json:"digestMethod"`
-	DigestValue  string    `xml:"DigestValue" json:"digestValue"`
+	URI          string      `xml:"URI,attr" json:"uri"`                   // Referenced content.
+	Transform    []Algorithm `xml:"Transforms>Transform" json:"transform"` // Applied transforms.
+	DigestMethod Algorithm   `xml:"DigestMethod" json:"digestMethod"`      // Digest algorithm.
+	DigestValue  string      `xml:"DigestValue" json:"digestValue"`        // Encoded digest.
 }
 
-// SignatureProperty is the simplified Object element that contains the signed
-// data for the enveloping signature.
+// SignatureProperty holds a property covered by a signature.
 type SignatureProperty struct {
-	ID      string  `xml:"Id,attr" json:"id"`
-	Target  string  `xml:"Target,attr" json:"target"`
-	XCValue XCValue `xml:"value" json:"value"`
+	ID      string  `xml:"Id,attr" json:"id"`         // Property ID.
+	Target  string  `xml:"Target,attr" json:"target"` // Property target.
+	XCValue XCValue `xml:"value" json:"value"`        // NAADS xc value.
 }
 
-// Algorithm is required to access algorithm definitions within the XML digital
-// signature specification.
+// Algorithm names an XML signature algorithm.
 type Algorithm struct {
-	Algorithm string `xml:"Algorithm,attr" json:"algorithm"`
+	Algorithm string `xml:"Algorithm,attr" json:"algorithm"` // Algorithm URI.
 }
 
-// XCValue is required to access the value of the SignatureProperty.
+// XCValue holds the xc namespace used by NAADS signatures.
 type XCValue struct {
-	XC string `xml:"xc,attr" json:"xc"`
+	XC string `xml:"xc,attr" json:"xc"` // Namespace declared for xc.
 }
 
-// protocol.go
+// Extension preserves an additional XML Signature element at the alert root.
+type Extension struct {
+	XMLName  xml.Name   `json:"name"`                                 // Element name.
+	Attr     []xml.Attr `xml:",any,attr" json:"attributes,omitempty"` // Element attributes.
+	InnerXML string     `xml:",innerxml" json:"innerXML,omitempty"`   // Raw child content.
+}

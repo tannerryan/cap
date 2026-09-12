@@ -1,6 +1,5 @@
-// Copyright (c) 2019 Tanner Ryan. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
+// Copyright (c) 2019 Tanner Ryan. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 package cap
 
@@ -10,57 +9,58 @@ import (
 	"errors"
 )
 
-// Certainty is a code denoting the appropriate handling of the alert message
+// Certainty identifies the certainty of an alert's subject event.
 type Certainty int
 
 const (
-	// CertaintyObserved :: Determined to have occurred or to be ongoing
-	CertaintyObserved Certainty = 0
-	// CertaintyLikely :: Likely (p > ~50%)
-	CertaintyLikely Certainty = 1
-	// CertaintyPossible :: Possible but not likely (p <= ~50%)
-	CertaintyPossible Certainty = 2
-	// CertaintyUnlikely :: Not expected to occur (p ~ 0)
-	CertaintyUnlikely Certainty = 3
-	// CertaintyUnknown :: Certainty unknown
-	CertaintyUnknown Certainty = 4
+	// CertaintyObserved means the event has occurred or is underway.
+	CertaintyObserved Certainty = iota + 1
+	// CertaintyLikely means the event is more likely than not. The parser also
+	// accepts the deprecated CAP 1.0 value "Very Likely" as this value.
+	CertaintyLikely
+	// CertaintyPossible means the event is possible but not likely.
+	CertaintyPossible
+	// CertaintyUnlikely means the event is not expected.
+	CertaintyUnlikely
+	// CertaintyUnknown means the certainty is unknown.
+	CertaintyUnknown
 )
 
-// Certainty mapping
-var (
-	CertaintyMapping = map[string]Certainty{
-		"Observed": CertaintyObserved,
-		"Likely":   CertaintyLikely,
-		"Possible": CertaintyPossible,
-		"Unlikely": CertaintyUnlikely,
-		"Unknown":  CertaintyUnknown,
-	}
-)
+// CertaintyMapping maps CAP certainty values to Certainty constants. Callers
+// must not modify it.
+var CertaintyMapping = map[string]Certainty{
+	"Observed": CertaintyObserved,
+	"Likely":   CertaintyLikely,
+	"Possible": CertaintyPossible,
+	"Unlikely": CertaintyUnlikely,
+	"Unknown":  CertaintyUnknown,
+}
 
-// stringToCode will perform the mapping of string to a Certainty code. An error
-// will be thrown if an unknown value is encountered.
+// stringToCertaintyCode parses a CAP certainty value.
 func stringToCertaintyCode(t *Certainty, val string) error {
+	if val == "Very Likely" {
+		*t = CertaintyLikely
+		return nil
+	}
 	enum, ok := CertaintyMapping[val]
 	if !ok {
-		return errors.New("Error: illegal value " + val + " for Certainty code")
+		return errors.New("cap: invalid Certainty value " + val)
 	}
 	*t = enum
 	return nil
 }
 
-// String converts the Certainty code back to a string.
+// String returns the CAP certainty value.
 func (t Certainty) String() string {
 	for key, val := range CertaintyMapping {
 		if val == t {
 			return key
 		}
 	}
-	// logically never reached
 	return ""
 }
 
-// UnmarshalXML will be used during the XML unmarshaling for conversion to
-// Certainty code.
+// UnmarshalXML decodes a CAP certainty value.
 func (t *Certainty) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) error {
 	var val string
 	if err := decoder.DecodeElement(&val, &elem); err != nil {
@@ -69,13 +69,12 @@ func (t *Certainty) UnmarshalXML(decoder *xml.Decoder, elem xml.StartElement) er
 	return stringToCertaintyCode(t, val)
 }
 
-// MarshalXML converts the Certainty code back to a string when marshaling XML.
+// MarshalXML encodes a CAP certainty value.
 func (t Certainty) MarshalXML(encoder *xml.Encoder, elem xml.StartElement) error {
-	return encoder.EncodeElement(t.String(), elem)
+	return marshalEnumXML(encoder, elem, t.String(), "Certainty")
 }
 
-// UnmarshalJSON will be used during the JSON unmarshaling for conversion to
-// Certainty code.
+// UnmarshalJSON decodes a CAP certainty value.
 func (t *Certainty) UnmarshalJSON(buff []byte) error {
 	var val string
 	if err := json.Unmarshal(buff, &val); err != nil {
@@ -84,8 +83,7 @@ func (t *Certainty) UnmarshalJSON(buff []byte) error {
 	return stringToCertaintyCode(t, val)
 }
 
-// MarshalJSON converts the Certainty code back to a string when marshaling
-// JSON.
+// MarshalJSON encodes a CAP certainty value.
 func (t Certainty) MarshalJSON() ([]byte, error) {
-	return json.Marshal(t.String())
+	return marshalEnumJSON(t.String(), "Certainty")
 }

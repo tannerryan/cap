@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.840.0.200f7ea12e7e752707f256bcb75139b8363610b4.001.1</identifier>
+    <sender>w-nws.webmaster@noaa.gov</sender>
+    <sent>2026-09-12T09:15:00-06:00</sent>
+    <status>Actual</status>
+    <msgType>Cancel</msgType>
+    <source>211803 v2.3.0</source>
+    <scope>Public</scope>
+    <code>IPAWSv1.0</code>
+    <references>w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1b30bfeb3d4f67abd849b064811d657a163f2249.001.1,2026-09-11T10:27:00-06:00</references>
+    <info>
+        <language>en-US</language>
+        <category>Met</category>
+        <event>Fire Weather Watch</event>
+        <responseType>Monitor</responseType>
+        <urgency>Past</urgency>
+        <severity>Severe</severity>
+        <certainty>Observed</certainty>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>NWS</value>
+        </eventCode>
+        <eventCode>
+            <valueName>NationalWeatherService</valueName>
+            <value>FWA</value>
+        </eventCode>
+        <effective>2026-09-12T09:15:00-06:00</effective>
+        <onset>2026-09-13T12:00:00-06:00</onset>
+        <expires>2026-09-12T09:30:17-06:00</expires>
+        <senderName>NWS Missoula MT</senderName>
+        <headline>The Fire Weather Watch has been replaced. Please see the latest information from NWS Missoula MT on this developing situation.</headline>
+        <description>The Fire Weather Watch has been replaced. Please see the latest information from NWS Missoula MT on this developing situation.</description>
+        <instruction>Please advise the appropriate officials or fire crews in the field of
+this Red Flag Warning.
+
+Make and maintain your go kit. Is it ready to go? Are there any
+materials you need to refresh? Visit ready.gov/kit.
+
+A Red Flag Warning is issued when we identify weather conditions that
+promote rapid spread of fire which may become life-threatening. This
+does not mean there is a fire. These conditions are either occurring
+now or will begin soon. It is important to have multiple ways to
+receive information from authorities.</instruction>
+        <web>http://www.weather.gov</web>
+        <parameter>
+            <valueName>AWIPSidentifier</valueName>
+            <value>RFWMSO</value>
+        </parameter>
+        <parameter>
+            <valueName>WMOidentifier</valueName>
+            <value>WWUS85 KMSO 121515</value>
+        </parameter>
+        <parameter>
+            <valueName>NWSheadline</valueName>
+            <value>RED FLAG WARNING IN EFFECT FROM NOON TO 9 PM MDT SUNDAY</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>EAS</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>NWEM</value>
+        </parameter>
+        <parameter>
+            <valueName>VTEC</valueName>
+            <value>/O.UPG.KMSO.FW.A.0008.260913T1800Z-260914T0200Z/</value>
+        </parameter>
+        <parameter>
+            <valueName>eventEndingTime</valueName>
+            <value>2026-09-13T20:00:00-06:00</value>
+        </parameter>
+        <parameter>
+            <valueName>BLOCKCHANNEL</valueName>
+            <value>CMAS</value>
+        </parameter>
+        <area>
+            <areaDesc>Eastern Beaverhead National Forest</areaDesc>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>030001</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>030043</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>030057</value>
+            </geocode>
+            <geocode>
+                <valueName>SAME</valueName>
+                <value>030093</value>
+            </geocode>
+            <geocode>
+                <valueName>UGC</valueName>
+                <value>MTZ111</value>
+            </geocode>
+        </area>
+    </info>
+</alert>
